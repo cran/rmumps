@@ -1,0 +1,5 @@
+Version 5.0.1.4
+===============
+
+* 2015-12-17
+ - initial release. Provides solve(), numeric() and symbolic() methods
