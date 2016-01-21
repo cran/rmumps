@@ -1,6 +1,6 @@
-a79a9da927d117ba90be2102c4d5922c *DESCRIPTION
+9bc835ab3ce7abacc4aa08b5efbd905d *DESCRIPTION
 c381e3edd8e00c1b26dc1446baae6439 *NAMESPACE
-83c6d6184719f8c6a9bb1a887592596c *NEWS
+04091ee01352fb99b29c3ef6509efd7d *NEWS
 e9f08b8186f64a13bb39c1dd395abf80 *R/RcppExports.R
 d41d8cd98f00b204e9800998ecf8427e *R/WorldClass.R
 27c6af1d4e31137e7d99c160b374e8d5 *R/zzz.R
@@ -10,7 +10,7 @@ ee9626ba71b68f3f8e6313b6550e89dc *inst/examples/random_matrix.R
 395c0536199fc796158a6ef4f1a9a819 *inst/include/rmumps.h
 e6457515a95394572318dc57dcf53b56 *inst/include/rmumps_RcppExports.h
 7f8d4d073819b8f325d32b18b4e75325 *man/Rmumps.Rd
-e53b3bf59ae50a17b8023a1a0fb161ba *man/rmumps-package.Rd
+b8dfef0d9c7f548d8bfa395d62502e62 *man/rmumps-package.Rd
 b721ebb8011eaf93a36e233190c99fcc *src/Makevars
 630e827f7e222fbde9927b602da8e017 *src/Makevars.win
 d6a5dffd98ff050660953ba2aecd5a6e *src/RcppExports.cpp
@@ -417,6 +417,6 @@ a5ccda7153b2eb68711d8ce05753741b *src/lib/metis-5.1.0/libmetis/stdheaders.h
 2baf3e05cf4928801f8bce5f534e4e03 *src/lib/metis-5.1.0/libmetis/timing.c
 c745052c55aa1d0887706af960447a36 *src/lib/metis-5.1.0/libmetis/util.c
 bca07cd5dd33809c8eaa3e4169a94d5a *src/lib/metis-5.1.0/libmetis/wspace.c
-01db7c51645f9e24e1498a20f78315d3 *src/rmumps_module.cpp
+d288dd81e4cb5765ab37cfb105b9da52 *src/rmumps_module.cpp
 6466c98629bdeb38f23895ef2836bcea *tests/testthat.R
 3fb30d0a93cb239bf7b532af44a35953 *tests/testthat/test_rmumps.R
