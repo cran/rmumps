@@ -100,11 +100,11 @@ IORDERINGSC = $(IMETIS) $(IPORD) $(ISCOTCH)
 PLAT    = 
 # Library extension, + C and Fortran "-o" option
 # may be different under Windows
-LIBEXT  = .dll
+LIBEXT  = .lib
 OUTC    = -o 
 OUTF    = -o 
 # RM : remove files
-RM      = /bin/rm -f
+RM      = rm -f
 # CC : C compiler
 # FC : Fortran 90 compiler
 # FL : Fortran linker

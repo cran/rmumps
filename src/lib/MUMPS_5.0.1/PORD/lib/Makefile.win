@@ -31,7 +31,7 @@ libpord$(LIBEXT):$(OBJS)
 	$(RANLIB) $@
 
 clean:
-	rm -f *.o
+	$(RM) *.o
 
 realclean:
-	rm -f *.o libpord$(LIBEXT)
+	$(RM) *.o libpord$(LIBEXT)
