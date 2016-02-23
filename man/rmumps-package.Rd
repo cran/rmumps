@@ -14,7 +14,7 @@ LU factorization and system solving.
 
 The DESCRIPTION file:
 Create a new Rmumps object with \code{A <- Rmumps$new(asparse)} then solve a
-linear system with one or many right hand sides \code{x <- A$solve(b)}
+linear system with one or many right hand sides \code{x <- solve(A, b)}
 }
 \author{
 Serguei Sokol, INRA
@@ -24,12 +24,12 @@ Maintainer: Serguei Sokol (sokol at insa-toulouse.fr)
 \references{
 MUMPS official site http://mumps.enseeiht.fr
 
-Sokol S (2016). _Rmumps: Rcpp port of MUMPS_. rmumps package version 5.0.1.7, <URL:
+Sokol S (2016). _Rmumps: Rcpp port of MUMPS_. rmumps package version 5.0.1.8, <URL:
 http://CRAN.R-project.org/package=rmumps>.
 }
 \examples{
 \dontrun{
 A <- Rmumps$new(asparse)
-x <- A$solve(b)
+x <- solve(A, b)
 }
 }
