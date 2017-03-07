@@ -1,3 +1,14 @@
+Version 5.0.1.12
+================
+
+* 2017-03-06
+ - added library SCOTCH v6.0.4 (http://gforge.inria.fr/projects/scotch/) as option for ordering (...$set_icntl(3, 7))
+ - default ICNTL(33) is set to 1, i.e. the determinant is calculated (before was 0, i.e. no determinant calculation)
+ - added det() and determinant() methods returning determinant value
+ - added sym parameter to constructor. Now symmetric matrices can be decomposed as LDL^t
+ - added solvet() method for solving transposed system
+ - fixed registering C-callable in coming R-3.4
+
 Version 5.0.1.11
 ================
 
@@ -57,4 +68,3 @@ Version 5.0.1.4
 
 * 2015-12-17
  - initial release. Provides solve(), numeric() and symbolic() methods
-
