@@ -1,8 +1,8 @@
 Package: rmumps
 Type: Package
 Title: Wrapper for MUMPS Library
-Version: 5.0.1.12-1
-Date: 2017-03-06
+Version: 5.0.1.12-3
+Date: 2017-03-16
 Author: Serguei Sokol
 Maintainer: Serguei Sokol <sokol@insa-toulouse.fr>
 Description: Some basic features of MUMPS (Multifrontal Massively Parallel
@@ -20,6 +20,6 @@ Biarch: yes
 Suggests: testthat, Matrix, slam
 BugReports: https://github.com/sgsokol/rmumps/issues
 URL: http://mumps.enseeiht.fr/, https://github.com/sgsokol/rmumps/
-Packaged: 2017-03-07 15:41:02 UTC; sokol
+Packaged: 2017-03-16 16:30:41 UTC; sokol
 Repository: CRAN
-Date/Publication: 2017-03-08 08:22:33
+Date/Publication: 2017-03-17 11:33:47 UTC
