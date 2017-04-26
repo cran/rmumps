@@ -38,6 +38,6 @@ aum=Rmumps$new(aau, 1)
 system.time(xu <- aum$solve(ba))
 
 # clean up by hand to avoid a possible interference between gc() and
-# Rcpp object destructor after unloading this namespace
+# Rcpp object destructor after unloading rmumps namespace
 rm(am, alm, aum)
 gc()

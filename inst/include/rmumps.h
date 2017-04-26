@@ -15,6 +15,7 @@ public:
   NumericVector rhs_sparse;
   NumericVector anz;
   bool copy;
+  int ncore;
   std::set<int> jobs;
   MUMPS_INT sym;
   char buf[512];
@@ -27,8 +28,11 @@ public:
   Rmumps(IntegerVector i, IntegerVector j, NumericVector x, int n, int sym, bool copy_);
   ~Rmumps();
   void clean();
+  //Rmumps shallow_copy(Rmumps a);
   bool get_copy();
   void set_copy(bool copy_);
+  int get_ncore();
+  void set_ncore(int ncore_);
   int get_sym();
   void set_sym(int sym);
   void do_job(int job);
@@ -49,6 +53,7 @@ public:
   void set_cntl(NumericVector v, IntegerVector iv);
   IntegerVector get_icntl();
   NumericVector get_cntl();
+  void set_keep(IntegerVector iv, IntegerVector ii);
   List get_infos();
   NumericVector get_rhs();
   NumericMatrix get_mrhs();
@@ -60,6 +65,7 @@ public:
   std::string mumps_version();
   double det();
 private:
+  int ref; // counts shallow copies of this object
   DMUMPS_STRUC_C param;
   void new_mat(RObject mat, int sym, bool copy_);
   void new_ijv(IntegerVector i0, IntegerVector j0, NumericVector x, int n, int sym, bool copy_);

@@ -13,19 +13,40 @@ using namespace Rcpp;
 #define USE_COMM_WORLD -987654
 #define ICNTL(I) icntl[(I)-1] /* macro s.t. indices match documentation */
 
+#ifdef _OPENMP
+#include <omp.h>
+#endif
+
 #include "../inst/include/rmumps.h"
-Rmumps::~Rmumps() { clean(); }
+Rmumps::~Rmumps() { if (ref == 0) clean(); }
 void Rmumps::clean() {
   //Rprintf("clean() is called...\n");
   param.job=JOB_END;
   dmumps_c(&param);
   //Rprintf("clean(): done\n");
 }
+/* unfortunately, there is an unwanted extra destructor call
+Rmumps Rmumps::shallow_copy(Rmumps a) {
+  Rmumps x=a;
+  x.ref++;
+  return x;
+}
+* */
 bool Rmumps::get_copy() {
   return copy;
 }
 void Rmumps::set_copy(bool copy_) {
   copy=copy_;
+}
+int Rmumps::get_ncore() {
+  return ncore;
+}
+void Rmumps::set_ncore(int ncore_) {
+#ifdef _OPENMP
+  ncore=ncore_;
+#else
+  ncore=1;
+#endif
 }
 int Rmumps::get_sym() {
   return param.sym;
@@ -62,7 +83,16 @@ void Rmumps::do_job(int job) {
     break;
   }
   param.job=job;
+  // set core number to use in openmp
+//#ifdef _OPENMP
+//#pragma omp parallel
+  //{
+  //omp_set_num_threads(ncore);
+//#endif
   dmumps_c(&param);
+//#ifdef _OPENMP
+//  }
+//#endif
   if (param.info[0] != 0) {
     //clean();
     stop("rmumps: info[1]=%d, info[2]=%d", param.info[0], param.info[1]);
@@ -167,11 +197,42 @@ NumericMatrix Rmumps::solvem(NumericMatrix b) {
   } else {
     mrhs=b;
   }
-  param.rhs=&*mrhs.begin();
-  param.nrhs=b.ncol();
   param.lrhs=b.nrow();
   param.ICNTL(20)=0; // rhs is dense
+  param.rhs=&*mrhs.begin();
+  param.nrhs=b.ncol();
+#if 0 // #ifdef _OPENMP
+  // unfortunately, MUMPS is not thread safe, there is a writing in working arrays during solving phase
+  int ncol=b.ncol();
+  int nthr=std::max(1, std::min(ncol , ncore)); // thread number to launch
+  int ncol_th=b.ncol()/nthr; // col number per thread
+  if (nthr == 1) {
+    param.nrhs=ncol;
+    do_job(6);
+  } else {
+    #pragma omp parallel for num_threads(nthr)
+    for (int ith=0; ith < nthr; ith++) {
+      Rmumps pth=*this;
+      pth.ref++;
+      /* Rcout << "jobs=" << std::endl;
+      std::copy(jobs.begin(), jobs.end(), std::ostream_iterator<int>(Rcout, ", "));
+      Rcout << std::endl;
+      Rcout << "pth.jobs=" << std::endl;
+      std::copy(pth.jobs.begin(), pth.jobs.end(), std::ostream_iterator<int>(Rcout, ", "));
+      Rcout << std::endl;
+      */
+      pth.param.rhs=&*mrhs.begin()+ith*ncol_th*pth.param.lrhs;
+      pth.param.nrhs=(ith == nthr-1 ? ncol-ith*ncol_th : ncol_th);
+      /*
+      Rcout << "param.rhs=" << param.rhs << ", nrhs=" << pth.param.nrhs << std::endl;
+      Rcout << "pth.param.rhs=" << pth.param.rhs << std::endl;
+      */
+      pth.do_job(6);
+    }
+  }
+#else
   do_job(6);
+#endif
   return(mrhs);
 }
 void Rmumps::solveptr(double* b, int lrhs, int nrhs) {
@@ -423,6 +484,19 @@ List Rmumps::get_infos() {
     _("rinfog")=rinfog
   );
 }
+void Rmumps::set_keep(IntegerVector iv, IntegerVector ii) {
+  // set control vector KEEP at positions in ii (1-based)) to the values in iv
+  // only 1 <= ii <= 500 are effectively used
+  if (iv.size() != ii.size()) {
+    sprintf(buf, "set_keep: length(iv) and length(ii) must be the same (got %d and %d respectively)", (int) iv.size(), (int) ii.size());
+    stop(buf);
+  }
+  for (auto i=0; i < ii.size(); i++) {
+    if (ii[i] > 500 || ii[i] < 1)
+      continue;
+    param.keep[ii[i]-1]=iv[i];
+  }
+}
 
 IntegerVector Rmumps::dim() {
   return IntegerVector::create(param.n, param.n);
@@ -588,6 +662,8 @@ void Rmumps::new_ijv(IntegerVector i0, IntegerVector j0, NumericVector x, int n_
 
 void Rmumps::tri_init(MUMPS_INT *irn, MUMPS_INT *jcn, double *a, MUMPS_INT sym) {
   this->sym=sym;
+  this->ncore=1;
+  this->ref=0;
   /* Initialize a MUMPS instance. Use MPI_COMM_WORLD */
   param.job=JOB_INIT;
   param.keep[39]=0; // otherwise valgrind complaints
@@ -644,6 +720,7 @@ RCPP_MODULE(mod_Rmumps){
   .property("mrhs", &Rmumps::get_mrhs, &Rmumps::set_mrhs)
   .field("copy", &Rmumps::copy, "copy or not input parameters")
   .field_readonly("sym", &Rmumps::sym)
+  .field("ncore", &Rmumps::ncore, "how many cores to use within OpenMP regions")
   
   .method("symbolic", &Rmumps::symbolic , "Analyze sparsity pattern")
   .method("numeric", &Rmumps::numeric, "Factorize sparse matrix")
@@ -656,6 +733,7 @@ RCPP_MODULE(mod_Rmumps){
   .method("set_cntl", &Rmumps::set_cntl, "Set CNTL parameter vector")
   .method("get_cntl", &Rmumps::get_cntl, "Get CNTL parameter vector")
   .method("get_infos", &Rmumps::get_infos, "Get a named list of information vectors")
+  .method("set_keep", &Rmumps::set_icntl, "Set KEEP parameter vector")
   .method("dim", &Rmumps::dim, "Return a vector with matrix dimensions")
   .method("nrow", &Rmumps::nrow, "Return an integer with matrix row number")
   .method("ncol", &Rmumps::ncol, "Return an integer with matrix column number")
@@ -663,5 +741,6 @@ RCPP_MODULE(mod_Rmumps){
   .method("show", &Rmumps::print, "Print the size of matrix and decompositions done")
   .method("triplet", &Rmumps::triplet, "Return an object of simple_triplet_matrix class with i, j, v fields representing the matrix")
   .method("det", &Rmumps::det, "Return determinant of the matrix")
+  .method("mumps_version", &Rmumps::mumps_version, "Return determinant of the matrix")
   ;
 }
