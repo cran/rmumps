@@ -1,6 +1,6 @@
-cf9261dfb8da51c239b3e46f270a3233 *DESCRIPTION
+cc7aac39085d735f4af5538089c2158c *DESCRIPTION
 bd016ac0b3a1c3512352d8ba108ce216 *NAMESPACE
-6e5329c41a3e8843855a2cb18cc8b87c *NEWS
+59765ef18c6b2e7100d7144f362b1bf6 *NEWS
 7c6c19a78c77bd4b57e208a7bc92ecd2 *R/RcppExports.R
 28c781e8574bec0dddf95efdf08011d7 *R/methods.R
 6a01bcd8ced272021532bbf62e1cc25c *R/zzz.R
@@ -20,7 +20,7 @@ dee2a7e42ae9b5115e118e30087fce11 *inst/examples/random_stm.R
 dc28e1a3bf87121519306ce1b311de88 *inst/include/mumps_compat.h
 82bd6c79ce2067338a02ce06b1129d60 *inst/include/rmumps.h
 abcf1716cbc78c427db33b199e26c62b *man/Rmumps.Rd
-cc4bff60fb68d3c197e013b7ddebe803 *man/rmumps-package.Rd
+d88c98fe78599b8ff76a35342c2f537a *man/rmumps-package.Rd
 8652a83c42bdbfbc9d0d24083a143d1d *src/Makevars
 05bbf0d5190e062235cb361e7ce356f6 *src/Makevars.omp
 8a1bac0ea5821eee7d00ad9eb4fce988 *src/RcppExports.cpp
@@ -114,8 +114,8 @@ fdf0c120dbf64e2e61f55bbdd194e64e *src/lib/MUMPS_5.1.1/src/ana_set_ordering.F
 b7481e4d704f980b47e9cd0efc0ea3fb *src/lib/MUMPS_5.1.1/src/dana_aux.F
 b7481e4d704f980b47e9cd0efc0ea3fb *src/lib/MUMPS_5.1.1/src/dana_aux.F.orig
 5f6159a5bf2d3feef15e05f2ffe5c958 *src/lib/MUMPS_5.1.1/src/dana_aux.F.rej
-87bda7906888af4ce245cae759f3d093 *src/lib/MUMPS_5.1.1/src/dana_aux_ELT.F
-9bd699a66c3c2728a37180a9e6ce9d9c *src/lib/MUMPS_5.1.1/src/dana_aux_par.F
+3b1c9b7370072488e93fae263c1a3180 *src/lib/MUMPS_5.1.1/src/dana_aux_ELT.F
+a203309e62fafb99168245b4d19bcf91 *src/lib/MUMPS_5.1.1/src/dana_aux_par.F
 f95c9543ea5c78f6ff75369b7fe20112 *src/lib/MUMPS_5.1.1/src/dana_dist_m.F
 6f941f402d7d836e4ec28afb28b5e592 *src/lib/MUMPS_5.1.1/src/dana_driver.F
 955c8e09c06015af56e4e20980075a9e *src/lib/MUMPS_5.1.1/src/dana_driver.F.orig
@@ -243,7 +243,7 @@ a49a042f9eb64fc43431948dfdc5751d *src/lib/MUMPS_5.1.1/src/mumps_metis_int.h
 258386f511bd482f70ae2cbc2c826f50 *src/lib/MUMPS_5.1.1/src/mumps_pord.h
 db21e4915143d7f7ca3640425327ed12 *src/lib/MUMPS_5.1.1/src/mumps_print_defined.F
 e7355dcde188c9697434dd62d39ecea1 *src/lib/MUMPS_5.1.1/src/mumps_save_restore_C.c
-3f49f87b1b1841c6350ccaa05b975a9a *src/lib/MUMPS_5.1.1/src/mumps_save_restore_C.h
+12fb89ac37062714d0e1e356843f8389 *src/lib/MUMPS_5.1.1/src/mumps_save_restore_C.h
 e4502925e876d67cbe86efb30de63916 *src/lib/MUMPS_5.1.1/src/mumps_scotch.c
 53af5da8848ffffcfae1384a3998727b *src/lib/MUMPS_5.1.1/src/mumps_scotch.h
 f84114e5be9b0e8731c9893c26c16835 *src/lib/MUMPS_5.1.1/src/mumps_scotch64.c
