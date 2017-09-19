@@ -1,6 +1,6 @@
-cc7aac39085d735f4af5538089c2158c *DESCRIPTION
+a7353f70d95337dc717b26587ecd7bbd *DESCRIPTION
 bd016ac0b3a1c3512352d8ba108ce216 *NAMESPACE
-59765ef18c6b2e7100d7144f362b1bf6 *NEWS
+d53a927cc3930252a9cb1cfe0927c695 *NEWS
 7c6c19a78c77bd4b57e208a7bc92ecd2 *R/RcppExports.R
 28c781e8574bec0dddf95efdf08011d7 *R/methods.R
 6a01bcd8ced272021532bbf62e1cc25c *R/zzz.R
@@ -20,7 +20,7 @@ dee2a7e42ae9b5115e118e30087fce11 *inst/examples/random_stm.R
 dc28e1a3bf87121519306ce1b311de88 *inst/include/mumps_compat.h
 82bd6c79ce2067338a02ce06b1129d60 *inst/include/rmumps.h
 abcf1716cbc78c427db33b199e26c62b *man/Rmumps.Rd
-d88c98fe78599b8ff76a35342c2f537a *man/rmumps-package.Rd
+3dfd406e83bfdd97eacb333f3699c17c *man/rmumps-package.Rd
 8652a83c42bdbfbc9d0d24083a143d1d *src/Makevars
 05bbf0d5190e062235cb361e7ce356f6 *src/Makevars.omp
 8a1bac0ea5821eee7d00ad9eb4fce988 *src/RcppExports.cpp
@@ -111,7 +111,7 @@ fdc482eefdb853805a8bd34b945855c7 *src/lib/MUMPS_5.1.1/src/ana_orderings.F
 fdf0c120dbf64e2e61f55bbdd194e64e *src/lib/MUMPS_5.1.1/src/ana_set_ordering.F
 67ecc149d6a05398e1ee0ebbed1e0c4e *src/lib/MUMPS_5.1.1/src/bcast_errors.F
 5a294be6d841a2f441023dbb95b590a3 *src/lib/MUMPS_5.1.1/src/dana_LDLT_preprocess.F
-b7481e4d704f980b47e9cd0efc0ea3fb *src/lib/MUMPS_5.1.1/src/dana_aux.F
+0c7089dea8dac8058de26034a00e38e8 *src/lib/MUMPS_5.1.1/src/dana_aux.F
 b7481e4d704f980b47e9cd0efc0ea3fb *src/lib/MUMPS_5.1.1/src/dana_aux.F.orig
 5f6159a5bf2d3feef15e05f2ffe5c958 *src/lib/MUMPS_5.1.1/src/dana_aux.F.rej
 3b1c9b7370072488e93fae263c1a3180 *src/lib/MUMPS_5.1.1/src/dana_aux_ELT.F
