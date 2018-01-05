@@ -1,6 +1,6 @@
-41fa8530a43100c61e387d170ba5000d *DESCRIPTION
+e78f04b080230afbc9a349934aa7f9e6 *DESCRIPTION
 bd016ac0b3a1c3512352d8ba108ce216 *NAMESPACE
-65833506bc47b0717222d4d1203630fd *NEWS
+73e0fb043a87ed4fd618fcd6930ae169 *NEWS
 7c6c19a78c77bd4b57e208a7bc92ecd2 *R/RcppExports.R
 92eedf96a9c97879e89e787fc05db776 *R/inc_os.R
 28c781e8574bec0dddf95efdf08011d7 *R/methods.R
@@ -22,7 +22,7 @@ dee2a7e42ae9b5115e118e30087fce11 *inst/examples/random_stm.R
 dc28e1a3bf87121519306ce1b311de88 *inst/include/mumps_compat.h
 82bd6c79ce2067338a02ce06b1129d60 *inst/include/rmumps.h
 abcf1716cbc78c427db33b199e26c62b *man/Rmumps.Rd
-fd8bc2ce85558058fbc4c4f4ba6af5ee *man/rmumps-package.Rd
+ecb33c3d34fb11d42baeef9bf8d8e414 *man/rmumps-package.Rd
 c1c76b5ff8bd6d5cb43249f2751e17ec *src/Makevars
 d05bf5aad2ebe635bd05ae83ecaf0332 *src/Makevars.omp
 8a1bac0ea5821eee7d00ad9eb4fce988 *src/RcppExports.cpp
@@ -396,9 +396,9 @@ aa1c6368dc6e05af735ab862c983dee0 *src/lib/scotch_6.0.4/src/Make.inc/Makefile.inc
 be163068e85b87de216ab041d0c4c493 *src/lib/scotch_6.0.4/src/Make.inc/mingw32/gendll_1.sh
 3b90bf39d51864c75bc277832a12f5b9 *src/lib/scotch_6.0.4/src/Make.inc/mingw32/gendll_2.bat
 2347fa38a337bd08cc8680401d136410 *src/lib/scotch_6.0.4/src/Makefile
-05e908249e4e34f07e306d84a6f3134f *src/lib/scotch_6.0.4/src/Makefile.inc
-30f07b2c34c3b088c74fafea43c8a44a *src/lib/scotch_6.0.4/src/Makefile.inc.macos
-05e908249e4e34f07e306d84a6f3134f *src/lib/scotch_6.0.4/src/Makefile.inc.rmumps
+d1cbe20259546c3a79448caac6452fe8 *src/lib/scotch_6.0.4/src/Makefile.inc
+a56bfdf7340d8586b93c2695b91cdac6 *src/lib/scotch_6.0.4/src/Makefile.inc.macos
+d1cbe20259546c3a79448caac6452fe8 *src/lib/scotch_6.0.4/src/Makefile.inc.rmumps
 5a10cf98384b898bab63f464df7cbdfa *src/lib/scotch_6.0.4/src/Makefile.inc.win
 b97c1c9a804f340bc0d55911866be738 *src/lib/scotch_6.0.4/src/esmumps/Makefile
 573ed5062e2823308549d0904648f1f4 *src/lib/scotch_6.0.4/src/esmumps/dof.c
@@ -1010,5 +1010,5 @@ dfcb0150eb9232b87d53f1c2f30ba502 *src/lib/scotch_6.0.4/src/scotch/mcv.h
 16b9fd60210155aa16e89a9e74e45925 *src/lib/scotch_6.0.4/src/scotch/mtst.h
 bdd047451913b8da05a7c60ca12eb500 *src/lib/warnings.patch
 10fec6876cb72755cafe2a1a0a41065e *src/rmumps_module.cpp
-87cfff5cae22eb3f82cb6a21fb5180dc *tests/testthat.R
-cb29e26201aa9277a476d4147342e7ae *tests/testthat/test_rmumps.R
+42785a2cbb473391e0a13844c3ac007d *tests/testthat.R
+ca42d2a50dd65070f1ddcfa6fe4a397b *tests/testthat/test_rmumps.R
