@@ -1,8 +1,8 @@
 Package: rmumps
 Type: Package
 Title: Wrapper for MUMPS Library
-Version: 5.1.2-4
-Date: 2018-01-05
+Version: 5.1.2-5
+Date: 2018-12-18
 Authors@R: c(person("Serguei", "Sokol", role=c("aut", "cre"), email="sokol@insa-toulouse.fr"),
          person("Emmanuel", "Agullo", role="ctb"),
          person("Patrick", "Amestoy", role="ctb"),
@@ -61,8 +61,8 @@ Biarch: yes
 Suggests: testthat, Matrix, slam
 BugReports: https://github.com/sgsokol/rmumps/issues
 URL: http://mumps.enseeiht.fr/, https://github.com/sgsokol/rmumps/
-RoxygenNote: 6.0.1
-Packaged: 2018-01-05 14:59:52 UTC; sokol
+RoxygenNote: 6.1.0
+Packaged: 2018-12-18 14:03:58 UTC; sokol
 Author: Serguei Sokol [aut, cre],
   Emmanuel Agullo [ctb],
   Patrick Amestoy [ctb],
@@ -102,4 +102,4 @@ Author: Serguei Sokol [aut, cre],
   Richard Stallman [ctb],
   Samuel Thibault [ctb]
 Repository: CRAN
-Date/Publication: 2018-01-05 16:08:38 UTC
+Date/Publication: 2018-12-18 15:20:03 UTC
