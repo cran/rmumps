@@ -45,6 +45,7 @@ test_that("solving symmetric-2 system", {
 # test matrix creation from ijv triade
 a=as(a, "dgTMatrix")
 ai=Rmumps$new(a@i, a@j, a@x, ncol(a))
+ai$set_permutation(RMUMPS_PERM_SCOTCH)
 xi=solve(ai, b)
 test_that("testing a from i,j,v", {
   expect_equal(xi, 1:n)
@@ -56,9 +57,46 @@ if (getRversion() >= "3.4.0") {
   asl=as.simple_triplet_matrix(a)
   ai=Rmumps$new(asl)
   xi=solve(ai, b)
-  test_that("testing a from slam::simple_triplet_matrix", {
+  test_that("testing matrix from slam::simple_triplet_matrix", {
     expect_equal(xi, 1:n)
   })
+  # test pointers
+  code='
+// [[Rcpp::depends(rmumps)]]
+
+#include <Rcpp.h>
+#include <rmumps.h>
+
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+NumericVector solve_ptr(List a, NumericVector b) {
+  IntegerVector ir=a["i"], jc=a["j"];
+  NumericVector v=a["v"];
+  int n=a["nrow"], nz=v.size();
+  Rmumps rmu((int *) ir.begin(), (int *) jc.begin(), (double *) v.begin(), n, nz, 0);
+  rmu.set_permutation(RMUMPS_PERM_SCOTCH);
+  rmu.solveptr((double *) b.begin(), n, 1);
+  return(b);
+}
+'
+#cat("ls -R rmumps_path", list.files(path.package("rmumps"), recursive=TRUE), "", sep="\n")
+  rso=paste0("rmumps", .Platform$dynlib.ext)
+  rso_path=file.path(path.package("rmumps"), "libs", .Platform$r_arch, rso)
+  cat("rso_path=", rso_path)
+  if (!file.exists(rso_path))
+    rso_path=file.path(path.package("rmumps"), "src", rso) # devtool context
+#cat("rso_path='", rso_path, "'\n", sep="")
+  Sys.setenv(PKG_LIBS=rso_path)
+  cppFunction(code=code, depends="rmumps", verbose=TRUE)
+  sourceCpp(code=code, verbose=TRUE)
+  xe=as.double(1:n)
+  b0=slam::tcrossprod_simple_triplet_matrix(asl, t(xe))
+  x=solve_ptr(asl, b0)
+  test_that("testing solveptr() within Rcpp code", {
+    expect_lt(diff(range(x-xe)), 1e-14)
+  })
+
   rm(asl)
 
   # test sparse rhs as slam::simple_triplet_matrix
@@ -77,7 +115,9 @@ a=as(diag(n), "dgCMatrix")
 a@p[2L]=0L
 am=Rmumps$new(a)
 test_that("singular matrix", {
-  expect_error(solve(am, b), "*rmumps: info\\[1\\]=-10*")
+  expect_error(solve(am, b), "rmumps: job=6, info\\[1\\]=-10*")
 })
+
 rm(a, asy, am)
 gc()
+

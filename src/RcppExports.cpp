@@ -6,3 +6,14 @@
 
 using namespace Rcpp;
 
+// get_cnst
+int get_cnst(std::string s);
+RcppExport SEXP _rmumps_get_cnst(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::string >::type s(sSEXP);
+    rcpp_result_gen = Rcpp::wrap(get_cnst(s));
+    return rcpp_result_gen;
+END_RCPP
+}
