@@ -1,11 +1,12 @@
 #DMUMPS=MUMPS_5.0.1
-DMUMPS=MUMPS_5.1.2
+#DMUMPS=MUMPS_5.1.2
+DMUMPS=MUMPS_5.2.1
 DMETIS=metis-5.1.0
 DSCOTCH=scotch_6.0.4
 DLIB=../lib
 ARITH = d
 FLAGS.MPI=-I../libseq
-FLAGS.MUMPS=-Dmetis -Dpord -Dscotch -I../include -ffixed-form
+FLAGS.MUMPS=-Dmetis -Dpord -Dscotch -I../include
 FLAGS.PORD=-I../PORD/include
 FLAGS.SCOTCH=-I../../$(DSCOTCH)/include
 FLAGS.GKlib=-I$(DMETIS)/GKlib -DUSE_GKREGEX

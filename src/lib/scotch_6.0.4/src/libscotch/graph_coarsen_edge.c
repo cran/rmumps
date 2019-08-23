@@ -59,18 +59,20 @@ GraphCoarsenThread *                      thrdptr)
   Gnum                coarvertnum;
   Gnum                coarvertnnd;
   Gnum                coaredgenum;
+#ifndef GRAPHCOARSENEDGECOUNT
   Gnum                coardegrmax;
   Gnum                coaredloadj;                /* Edge load sum adjust with respect to fine graph edge load sum */
+#endif
 
   GraphCoarsenData * restrict               coarptr = (GraphCoarsenData *) (thrdptr->thrddat.grouptr);
   const Graph * restrict const              finegrafptr = coarptr->finegrafptr;
   const Gnum * restrict const               fineverttax = finegrafptr->verttax;
   const Gnum * restrict const               finevendtax = finegrafptr->vendtax;
-  const Gnum * restrict const               finevelotax = finegrafptr->velotax;
   const Gnum * restrict const               fineedgetax = finegrafptr->edgetax;
   Gnum * restrict const                     finecoartax = coarptr->finematetax;
-  const Graph * restrict const              coargrafptr = coarptr->coargrafptr;
 #ifndef GRAPHCOARSENEDGECOUNT
+  const Graph * restrict const              coargrafptr = coarptr->coargrafptr;
+  const Gnum * restrict const               finevelotax = finegrafptr->velotax;
   Gnum * restrict const                     coarverttax = coargrafptr->verttax;
   Gnum * restrict const                     coarvelotax = coargrafptr->velotax;
   Gnum * restrict const                     coaredgetax = coargrafptr->edgetax;
@@ -83,8 +85,12 @@ GraphCoarsenThread *                      thrdptr)
 
   GRAPHCOARSENEDGEINIT;
 
+
+#ifndef GRAPHCOARSENEDGECOUNT                     /* If we do not only want to count */
   coaredloadj = 0;
-  for (coarvertnum = thrdptr->coarvertbas, coardegrmax = 0, /* For all local coarse vertices */
+  coardegrmax = 0; /* For all local coarse vertices */
+#endif
+  for (coarvertnum = thrdptr->coarvertbas, 
        coarvertnnd = thrdptr->coarvertnnd, coaredgenum = thrdptr->coaredgebas;
        coarvertnum < coarvertnnd; coarvertnum ++) {
     Gnum                finevertnum;
