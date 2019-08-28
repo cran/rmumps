@@ -1,6 +1,6 @@
-d8046e740fbdb83419333dd7fc6de52b *DESCRIPTION
+b14be025e12e5354a9822cafe4796c5d *DESCRIPTION
 42f703cd237ef66c2edd348303e5bc54 *NAMESPACE
-18cf4aac9b65aeef84850d7c58d424b4 *NEWS
+7760f45d84699b062522865a41b30296 *NEWS
 864570fc40529e3733d41300e42aae03 *R/RcppExports.R
 92eedf96a9c97879e89e787fc05db776 *R/inc_os.R
 28c781e8574bec0dddf95efdf08011d7 *R/methods.R
@@ -341,7 +341,7 @@ bc9f93149aa257fbf7217780b39780eb *src/lib/metis-5.1.0/libmetis/debug.c
 da625cd1704c1fab0ab44b261bc124c7 *src/lib/metis-5.1.0/libmetis/defs.h
 e03a658756be96f1797b6b91fc7988e6 *src/lib/metis-5.1.0/libmetis/fm.c
 a622fd6c93d047e6551e0b6d841aff18 *src/lib/metis-5.1.0/libmetis/fortran.c
-9c7e4ff7732a530aebcc1219ea1425d4 *src/lib/metis-5.1.0/libmetis/frename.c
+55ead3bad4c044c939ee31e4b61ae2cd *src/lib/metis-5.1.0/libmetis/frename.c
 82814f51cfcec813431e6397138b9df2 *src/lib/metis-5.1.0/libmetis/gklib.c
 278111eaea0b1812165f8d1b882b51eb *src/lib/metis-5.1.0/libmetis/gklib_defs.h
 4852dcc1dc62af4033360177a7fe2778 *src/lib/metis-5.1.0/libmetis/gklib_rename.h
@@ -593,7 +593,7 @@ cc09a365734fdc7b406d9f692eb65650 *src/lib/scotch_6.0.4/src/libscotch/graph_coars
 fb923f0a5ee5dfcd2153bb30cbfb2400 *src/lib/scotch_6.0.4/src/libscotch/graph_induce.h
 b98946dca4a698343d88ce4274f489d4 *src/lib/scotch_6.0.4/src/libscotch/graph_io.c
 c33e23a9fe094a5abbf99294295b7401 *src/lib/scotch_6.0.4/src/libscotch/graph_io.h
-ab97eb05698157ecd9f62863a052225c *src/lib/scotch_6.0.4/src/libscotch/graph_io_chac.c
+c5c8be3cb6ac6f5df4e83831241f8837 *src/lib/scotch_6.0.4/src/libscotch/graph_io_chac.c
 0f20552c50e5c5b3dcefc0158fd4fd43 *src/lib/scotch_6.0.4/src/libscotch/graph_io_habo.c
 ea0737da77ae112b1494540fd7ae9ab4 *src/lib/scotch_6.0.4/src/libscotch/graph_io_habo.h
 ec81e613e3fffb85e45624271cc90a67 *src/lib/scotch_6.0.4/src/libscotch/graph_io_mmkt.c
