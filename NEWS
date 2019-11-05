@@ -1,9 +1,15 @@
-Version 5.2.1-5
+Version 5.2.1-6
+===============
+
+* 2019-11-05
+ - added C wrappers for some methods. Wrappers are registered with R_RegisterCCallable() so they are available from other package's C++ code.
+ 
+ Version 5.2.1-5
 ===============
 
 * 2019-08-26
  - fixed clang issues
- 
+
 VVersion 5.2.1-4
 ===============
 
