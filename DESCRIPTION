@@ -1,8 +1,8 @@
 Package: rmumps
 Type: Package
 Title: Wrapper for MUMPS Library
-Version: 5.2.1-6
-Date: 2019-11-05
+Version: 5.2.1-7
+Date: 2019-12-06
 Authors@R: c(person("Serguei", "Sokol", role=c("aut", "cre"), email="sokol@insa-toulouse.fr"),
          person("Emmanuel", "Agullo", role="ctb"),
          person("Patrick", "Amestoy", role="ctb"),
@@ -64,7 +64,7 @@ BugReports: https://github.com/sgsokol/rmumps/issues
 URL: http://mumps.enseeiht.fr/, https://github.com/sgsokol/rmumps/
 RoxygenNote: 6.1.1
 Encoding: UTF-8
-Packaged: 2019-11-05 15:48:42 UTC; sokol
+Packaged: 2019-12-06 09:56:07 UTC; sokol
 Author: Serguei Sokol [aut, cre],
   Emmanuel Agullo [ctb],
   Patrick Amestoy [ctb],
@@ -104,4 +104,4 @@ Author: Serguei Sokol [aut, cre],
   Richard Stallman [ctb],
   Samuel Thibault [ctb]
 Repository: CRAN
-Date/Publication: 2019-11-05 18:10:02 UTC
+Date/Publication: 2019-12-06 11:30:03 UTC
