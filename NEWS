@@ -1,3 +1,18 @@
+Version 5.2.1-12
+================
+
+* 2020-02-20
+ - MUMPS_SIZE_C() replaced by sizeof()
+ - fixed set_keep() method
+ - added get_keep() method
+ - added a test for type-size results in KEEP
+ - fixed import show method
+ - fixed exported names;
+ - updated scotch from 6.0.4 to 6.0.9
+ - get_cnst() renamed .get_cnst() and no more exported
+ - constants RMUMPS_PERM_... are regrouped in a named vector RMUMPS_PERM
+ - fixed warnings in graph_match.h and kgraph_map_df_loop.c
+
 Version 5.2.1-10
 ================
 
