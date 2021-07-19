@@ -1,6 +1,6 @@
-b551cf07a078c17df7ce8b979af1cee3 *DESCRIPTION
+c7526e071e631ca6dc95925e1496a70b *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-12c5362d8116028447be0c2b6734a181 *NEWS
+bedb2dca5387da07eaaf574c0c6989c2 *NEWS
 ea905e07b8eb5383d8c676887a80eee3 *R/RcppExports.R
 92eedf96a9c97879e89e787fc05db776 *R/inc_os.R
 28c781e8574bec0dddf95efdf08011d7 *R/methods.R
@@ -383,7 +383,6 @@ a5ccda7153b2eb68711d8ce05753741b *src/lib/metis-5.1.0/libmetis/stdheaders.h
 2baf3e05cf4928801f8bce5f534e4e03 *src/lib/metis-5.1.0/libmetis/timing.c
 c745052c55aa1d0887706af960447a36 *src/lib/metis-5.1.0/libmetis/util.c
 bca07cd5dd33809c8eaa3e4169a94d5a *src/lib/metis-5.1.0/libmetis/wspace.c
-8d8314ad2d5124a456fe51ad3aef6623 *src/lib/mpi.patch
 0afb9e8813af37dd28518836cd98ba06 *src/lib/scotch_6.0.9/INSTALL.txt
 d735033752cbbdde3d7e72743ad114d8 *src/lib/scotch_6.0.9/LICENCE_fr.txt
 60d48bd17b50f5d52803d0e4c49981e8 *src/lib/scotch_6.0.9/LICENSE_en.txt
@@ -621,7 +620,7 @@ b2a2a9479ba0c4d2286b8c4f821a40d1 *src/lib/scotch_6.0.9/src/libscotch/graph_induc
 a750fc3207761e34f0c1447389d80567 *src/lib/scotch_6.0.9/src/libscotch/graph_induce.h
 0b09be460e468875d4650aa2cba03c8c *src/lib/scotch_6.0.9/src/libscotch/graph_io.c
 32d14c1216e7b9b15c5e4b25d7b3cfc0 *src/lib/scotch_6.0.9/src/libscotch/graph_io.h
-24b6a7292f4384465138266f1a261fae *src/lib/scotch_6.0.9/src/libscotch/graph_io_chac.c
+0c4d9df306fbb36e575bdb885c8c1586 *src/lib/scotch_6.0.9/src/libscotch/graph_io_chac.c
 1fbec44f3c742d73d52c6f28677cbb6b *src/lib/scotch_6.0.9/src/libscotch/graph_io_habo.c
 1eaef701213a2106c55433c4277daefb *src/lib/scotch_6.0.9/src/libscotch/graph_io_habo.h
 c39bd373a82f4489724f499d58766c90 *src/lib/scotch_6.0.9/src/libscotch/graph_io_mmkt.c
@@ -895,7 +894,7 @@ f07dea539046dcc3abb8fb5482616fd7 *src/lib/scotch_6.0.9/src/libscotch/mesh_io_sco
 748df8294c5342fefbc393fc9ef78ccf *src/lib/scotch_6.0.9/src/libscotch/order.h
 fdfefa817c9f4ed9b8eedcd18281507a *src/lib/scotch_6.0.9/src/libscotch/order_check.c
 8dec63868623fd5d63ed8aed7dc09270 *src/lib/scotch_6.0.9/src/libscotch/order_io.c
-4e106f87f196604bc6f3286d3e60c34f *src/lib/scotch_6.0.9/src/libscotch/parser.c
+2f021062e0c7de0a037b522f4f99ad89 *src/lib/scotch_6.0.9/src/libscotch/parser.c
 7e117be8eb9245fe826dd30aa9071cdd *src/lib/scotch_6.0.9/src/libscotch/parser.h
 9949af276260fcf23e819acae945e9fb *src/lib/scotch_6.0.9/src/libscotch/parser_ll.h
 bc6d9b80c37af0a2737364d6ab1bac23 *src/lib/scotch_6.0.9/src/libscotch/parser_ll.l
@@ -1060,7 +1059,6 @@ dfcb0150eb9232b87d53f1c2f30ba502 *src/lib/scotch_6.0.9/src/scotch/mcv.h
 09c2f305544522079bb18352c1e41833 *src/lib/scotch_6.0.9/src/scotch/mord.h
 e82db71c528828b67e8c8ed873ee58ba *src/lib/scotch_6.0.9/src/scotch/mtst.c
 16b9fd60210155aa16e89a9e74e45925 *src/lib/scotch_6.0.9/src/scotch/mtst.h
-bdd047451913b8da05a7c60ca12eb500 *src/lib/warnings.patch
 dd68bfd74693047311e8e096a45d73b9 *src/rmumps_module.cpp
 f9a0ffe266afc3a1cad07ed359e02811 *tests/testthat.R
 9466c2de36e2f7e3a4b86bcd1637854e *tests/testthat/test_rmumps.R
