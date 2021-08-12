@@ -1,0 +1,181 @@
+--- dsol_driver.F	2019-06-14 16:46:31.000000000 +0200
++++ dsol_driver.F	2020-01-22 17:01:20.210551174 +0100
+@@ -3461,14 +3465,14 @@
+      &          id%COMM,
+      &          MTYPE, PTR_RHS(IBEG_loc),LD_RHS_loc,NCOL_RHS_loc,
+      &          NBRHS_EFF,
+-     &          id%RHSCOMP(IBEG_RHSCOMP), LD_RHSCOMP, NBRHS_EFF,
+-     &          id%POSINRHSCOMP_ROW(1), NB_FS_IN_RHSCOMP_F,
++     &          id%RHSCOMP(IBEG_RHSCOMP:), LD_RHSCOMP, NBRHS_EFF,
++     &          id%POSINRHSCOMP_ROW, NB_FS_IN_RHSCOMP_F,
+ C
+-     &          id%PTLUST_S(1), id%KEEP(1), id%KEEP8(1),
+-     &          id%PROCNODE_STEPS(1),
+-     &          IS(1), LIW_PASSED,
+-     &          id%STEP(1),
+-     &          id%ICNTL(1),id%INFO(1))
++     &          id%PTLUST_S, id%KEEP, id%KEEP8,
++     &          id%PROCNODE_STEPS,
++     &          IS, LIW_PASSED,
++     &          id%STEP,
++     &          id%ICNTL,id%INFO)
+               ENDIF
+               IF (INFO(1).LT.0) GOTO 90
+             ELSE
+@@ -3921,7 +3925,7 @@
+      &    id%POSINRHSCOMP_ROW(1), id%POSINRHSCOMP_COL(1)
+      &    , 1            , 1       ,  1       , 1
+      &    , IDUMMY, 1, JDUMMY, KDUMMY, 1, LDUMMY, 1, MDUMMY
+-     &    , 1 , 1 , NBSPARSE_LOC, PTR_RHS_BOUNDS(1), LPTR_RHS_BOUNDS
++     &    , 1 , 1 , NBSPARSE_LOC, PTR_RHS_BOUNDS, LPTR_RHS_BOUNDS
+      &    )
+           ELSE
+ C           Exploit sparsity of the RHS (all cases)
+@@ -3943,11 +3947,11 @@
+      & MASTER_ROOT, id%RHSCOMP(IBEG_RHSCOMP), LD_RHSCOMP,
+      & id%POSINRHSCOMP_ROW(1), id%POSINRHSCOMP_COL(1),
+      & NZ_THIS_BLOCK, NBCOL_INBLOC, id%NRHS, JBEG_RHS ,
+-     & id%Step2node(1), id%KEEP(28), IRHS_SPARSE_COPY(1),
+-     & IRHS_PTR_COPY(1), size(PERM_RHS), PERM_RHS, size(UNS_PERM_INV),
++     & id%Step2node, id%KEEP(28), IRHS_SPARSE_COPY,
++     & IRHS_PTR_COPY, size(PERM_RHS), PERM_RHS, size(UNS_PERM_INV),
+ C size 1 if not used
+      & UNS_PERM_INV, NB_FS_IN_RHSCOMP_F, NB_FS_IN_RHSCOMP_TOT,
+-     & NBSPARSE_LOC, PTR_RHS_BOUNDS(1), LPTR_RHS_BOUNDS
++     & NBSPARSE_LOC, PTR_RHS_BOUNDS, LPTR_RHS_BOUNDS
+      &       )
+           ENDIF   ! end of exploit sparsity (pruning nodes of the tree)
+         END IF
+@@ -4117,12 +4121,12 @@
+ C               in order to unpack pieces of the solution.
+                 CALL DMUMPS_GATHER_SOLUTION(id%NSLAVES,id%N,
+      &              id%MYID, id%COMM, NBRHS_EFF,
+-     &              MTYPE, id%RHS(1), LD_RHS, id%NRHS, JBEG_RHS,
+-     &              JDUMMY, id%KEEP(1), id%KEEP8(1),
+-     &              id%PROCNODE_STEPS(1), IDUMMY, 1,
+-     &              id%STEP(1), id%BUFR(1), id%LBUFR, id%LBUFR_BYTES,
+-     &              CWORK(1), LCWORK,
+-     &              LSCAL, PT_SCALING(1), size(PT_SCALING),
++     &              MTYPE, id%RHS, LD_RHS, id%NRHS, JBEG_RHS,
++     &              JDUMMY, id%KEEP, id%KEEP8,
++     &              id%PROCNODE_STEPS, IDUMMY, 1,
++     &              id%STEP, id%BUFR, id%LBUFR, id%LBUFR_BYTES,
++     &              CWORK, LCWORK,
++     &              LSCAL, PT_SCALING, size(PT_SCALING),
+      &              C_DUMMY, 1 , 1, IDUMMY, 1,
+      &              PERM_RHS, size(PERM_RHS) ! for sparse permuted RHS
+      &              )
+@@ -4158,28 +4162,28 @@
+                 ENDIF
+                 CALL DMUMPS_GATHER_SOLUTION(id%NSLAVES,id%N,
+      &          id%MYID, id%COMM, NBRHS_EFF, MTYPE,
+-     &          PTR_RHS(1), LD_RHS_loc, NCOL_RHS_loc, JBEG_RHS_loc,
+-     &          id%PTLUST_S(1), id%KEEP(1), id%KEEP8(1),
+-     &          id%PROCNODE_STEPS(1), IS(1), LIW_PASSED,
+-     &          id%STEP(1), id%BUFR(1), id%LBUFR, id%LBUFR_BYTES,
+-     &          CWORK(1), LCWORK,
+-     &          LSCAL, PT_SCALING(1), size(PT_SCALING),
+-     &          id%RHSCOMP(IBEG_RHSCOMP), LD_RHSCOMP, NBRHS_EFF,
+-     &          id%POSINRHSCOMP_COL(1), id%N,
++     &          PTR_RHS, LD_RHS_loc, NCOL_RHS_loc, JBEG_RHS_loc,
++     &          id%PTLUST_S, id%KEEP, id%KEEP8,
++     &          id%PROCNODE_STEPS, IS, LIW_PASSED,
++     &          id%STEP, id%BUFR, id%LBUFR, id%LBUFR_BYTES,
++     &          CWORK, LCWORK,
++     &          LSCAL, PT_SCALING, size(PT_SCALING),
++     &          id%RHSCOMP(IBEG_RHSCOMP:), LD_RHSCOMP, NBRHS_EFF,
++     &          id%POSINRHSCOMP_COL, id%N,
+      &          PERM_RHS, size(PERM_RHS) ! For sparse permuted RHS
+      &          )
+               ELSE ! only gather target entries of A-1
+                 CALL DMUMPS_GATHER_SOLUTION_AM1(id%NSLAVES,id%N,
+      &          id%MYID, id%COMM, NBRHS_EFF,
+-     &          id%RHSCOMP(IBEG_RHSCOMP), LD_RHSCOMP, NBRHS_EFF,
+-     &          id%KEEP(1), id%BUFR(1), id%LBUFR, id%LBUFR_BYTES,
+-     &          LSCAL, PT_SCALING(1), size(PT_SCALING)
++     &          id%RHSCOMP(IBEG_RHSCOMP:), LD_RHSCOMP, NBRHS_EFF,
++     &          id%KEEP, id%BUFR, id%LBUFR, id%LBUFR_BYTES,
++     &          LSCAL, PT_SCALING, size(PT_SCALING)
+ C               --- A-1 related entries
+-     &          , IRHS_PTR_COPY(1), size(IRHS_PTR_COPY),
+-     &          IRHS_SPARSE_COPY(1), size(IRHS_SPARSE_COPY),
+-     &          RHS_SPARSE_COPY(1), size(RHS_SPARSE_COPY),
++     &          , IRHS_PTR_COPY, size(IRHS_PTR_COPY),
++     &          IRHS_SPARSE_COPY, size(IRHS_SPARSE_COPY),
++     &          RHS_SPARSE_COPY, size(RHS_SPARSE_COPY),
+      &          UNS_PERM_INV, size(UNS_PERM_INV),
+-     &          id%POSINRHSCOMP_COL(1), id%N, NB_FS_IN_RHSCOMP_TOT
++     &          id%POSINRHSCOMP_COL, id%N, NB_FS_IN_RHSCOMP_TOT
+      &          )
+               ENDIF
+             ENDIF
+@@ -5496,14 +5500,14 @@
+      &      id%COMM,
+      &      SOLVET,  C_Y(1), id%N, 1,
+      &      1,
+-     &      id%RHSCOMP(IBEG_RHSCOMP), LD_RHSCOMP, 1,
+-     &      PTR_POSINRHSCOMP_FWD(1), NB_FS_IN_RHSCOMP_F,
++     &      id%RHSCOMP(IBEG_RHSCOMP:), LD_RHSCOMP, 1,
++     &      PTR_POSINRHSCOMP_FWD, NB_FS_IN_RHSCOMP_F,
+ C
+-     &      id%PTLUST_S(1), id%KEEP(1), id%KEEP8(1),
+-     &      id%PROCNODE_STEPS(1),
+-     &      IS(1), LIW_PASSED,
+-     &      id%STEP(1),
+-     &      id%ICNTL(1),id%INFO(1))
++     &      id%PTLUST_S, id%KEEP, id%KEEP8,
++     &      id%PROCNODE_STEPS,
++     &      IS, LIW_PASSED,
++     &      id%STEP,
++     &      id%ICNTL,id%INFO)
+         ENDIF
+         IF (INFO(1).LT.0) GOTO 89
+ C
+@@ -5540,7 +5544,7 @@
+      &    , 1            , 1       ,  1    , 1
+      &    , IDUMMY, 1, JDUMMY, KDUMMY, 1, LDUMMY, 1, MDUMMY
+      &    , 1, 1
+-     &    , NBSPARSE_LOC, PTR_RHS_BOUNDS(1), LPTR_RHS_BOUNDS
++     &    , NBSPARSE_LOC, PTR_RHS_BOUNDS, LPTR_RHS_BOUNDS
+      &    )
+         END IF
+ C       ------------------
+@@ -5598,11 +5602,11 @@
+           CALL DMUMPS_GATHER_SOLUTION(id%NSLAVES,id%N,
+      &      id%MYID, id%COMM, NBRHS_EFF,
+      &      SOLVET, C_Y, id%N, NBRHS_EFF, 1,
+-     &      JDUMMY, id%KEEP(1),id%KEEP8(1), id%PROCNODE_STEPS(1),
++     &      JDUMMY, id%KEEP,id%KEEP8, id%PROCNODE_STEPS,
+      &      IDUMMY, 1,
+-     &      id%STEP(1), id%BUFR(1), id%LBUFR, id%LBUFR_BYTES,
+-     &      CWORK(1), size(CWORK),
+-     &      LSCAL, PT_SCALING(1), size(PT_SCALING),
++     &      id%STEP, id%BUFR, id%LBUFR, id%LBUFR_BYTES,
++     &      CWORK, size(CWORK),
++     &      LSCAL, PT_SCALING, size(PT_SCALING),
+ !     RHSCOMP not on non-working master
+      &      C_DUMMY, 1 , 1, IDUMMY, 1,
+ !     for sparse permuted RHS on host
+@@ -5612,14 +5616,14 @@
+           CALL DMUMPS_GATHER_SOLUTION(id%NSLAVES,id%N,
+      &      id%MYID, id%COMM, NBRHS_EFF,
+      &      SOLVET, C_Y, id%N, NBRHS_EFF, 1,
+-     &      id%PTLUST_S(1), id%KEEP(1),id%KEEP8(1),
+-     &      id%PROCNODE_STEPS(1),
+-     &      IS(1), LIW_PASSED,
+-     &      id%STEP(1), id%BUFR(1), id%LBUFR, id%LBUFR_BYTES,
+-     &      CWORK(1), size(CWORK),
+-     &      LSCAL, PT_SCALING(1), size(PT_SCALING),
+-     &      id%RHSCOMP(IBEG_RHSCOMP), LD_RHSCOMP, NBRHS_EFF,
+-     &      PTR_POSINRHSCOMP_BWD(1), id%N,
++     &      id%PTLUST_S, id%KEEP,id%KEEP8,
++     &      id%PROCNODE_STEPS,
++     &      IS, LIW_PASSED,
++     &      id%STEP, id%BUFR, id%LBUFR, id%LBUFR_BYTES,
++     &      CWORK, size(CWORK),
++     &      LSCAL, PT_SCALING, size(PT_SCALING),
++     &      id%RHSCOMP(IBEG_RHSCOMP:), LD_RHSCOMP, NBRHS_EFF,
++     &      PTR_POSINRHSCOMP_BWD, id%N,
+      &      PERM_RHS, size(PERM_RHS)) ! for sparse permuted RHS on host
+         ENDIF
+         DEALLOCATE( CWORK )

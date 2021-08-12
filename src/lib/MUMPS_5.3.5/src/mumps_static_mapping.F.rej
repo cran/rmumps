@@ -1,0 +1,42 @@
+--- mumps_static_mapping.F	2019-06-14 16:46:10.000000000 +0200
++++ mumps_static_mapping.F	2020-01-17 17:20:29.596925069 +0100
+@@ -1214,9 +1220,10 @@
+         end do
+         IF (keep(376) .EQ.1) THEN
+            err_rep='GET_SPLIT_4_PERF'
++C ssg
+            CALL MUMPS_GET_SPLIT_4_PERF(inode, nfront, npiv,
+      &     dble(npropmap),
+-     &     k1, lnpivsplit, npivsplit, n, cv_frere(1), cv_keep(1), istat)
++     &     k1, lnpivsplit, npivsplit, n, cv_frere, cv_keep, istat)
+            k3=k1
+            doit = .true.
+            GOTO 200
+@@ -1253,11 +1260,12 @@
+         endif
+          if ( ( k1.le.1).or.(k3.le.1).or.(.NOT.doit) ) cycle
+          err_rep='SPLITNODE_INKPART'
++C ssg
+          call MUMPS_SPLITNODE_INTREE( inode, nfront, npiv, k1,
+-     &        lnpivsplit, npivsplit, cv_keep(1), n, cv_fils(1),
+-     &        cv_frere(1),
+-     &        cv_nfsiz(1), cv_ne(1), cv_info(5), 
+-     &        cv_nsteps, cv_nodetype(1), ierr)
++     &        lnpivsplit, npivsplit, cv_keep, n, cv_fils,
++     &        cv_frere,
++     &        cv_nfsiz, cv_ne, cv_info(5), 
++     &        cv_nsteps, cv_nodetype, ierr)
+          if(ierr.ne.0) then
+             if(cv_lp.gt.0)
+      &      write(cv_lp,*)'Error reported by ',err_rep,
+@@ -4878,7 +4893,9 @@
+       double precision, intent(in):: nproc
+       integer,intent(out)::k, npivsplit(lnpivsplit), istat
+       logical :: nosplit
+-      integer :: kk, optimization_strategy, nass, npiv2
++C ssg
++      integer :: npiv2=0
++      integer :: kk, optimization_strategy, nass
+       double precision :: nproc2
+       integer :: npivOld, npivNew
+       double precision :: timeFacOld, timeFacNew, timeAss

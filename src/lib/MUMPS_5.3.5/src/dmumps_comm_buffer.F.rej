@@ -1,0 +1,112 @@
+--- dmumps_comm_buffer.F	2019-06-14 16:46:29.000000000 +0200
++++ dmumps_comm_buffer.F	2020-01-20 12:16:57.408162839 +0100
+@@ -3253,36 +3260,36 @@
+       ELSE
+         ISLR_INT = 0
+       ENDIF
+-      CALL MPI_PACK( ISLR_INT, 1, MPI_INTEGER,
+-     &     BUF(1), LBUF, POSITION, COMM, IERR )
+-      CALL MPI_PACK( LRB%LRFORM,
+-     &     1, MPI_INTEGER,
+-     &     BUF(1), LBUF, POSITION, COMM, IERR )
+-      CALL MPI_PACK( LRB%K,
+-     &     1, MPI_INTEGER,
+-     &     BUF(1), LBUF, POSITION, COMM, IERR )
+-      CALL MPI_PACK( LRB%M, 
+-     &     1, MPI_INTEGER,
+-     &     BUF(1), LBUF, POSITION, COMM, IERR )
+-      CALL MPI_PACK( LRB%N,
+-     &     1, MPI_INTEGER,
+-     &     BUF(1), LBUF, POSITION, COMM, IERR )
+-      CALL MPI_PACK( LRB%KSVD,
+-     &     1, MPI_INTEGER,
+-     &     BUF(1), LBUF, POSITION, COMM, IERR )
++c ssg     CALL MPI_PACK( ISLR_INT, 1, MPI_INTEGER,
++c     &     BUF(1), LBUF, POSITION, COMM, IERR )
++c      CALL MPI_PACK( LRB%LRFORM,
++c     &     1, MPI_INTEGER,
++c     &     BUF(1), LBUF, POSITION, COMM, IERR )
++c      CALL MPI_PACK( LRB%K,
++c     &     1, MPI_INTEGER,
++c     &     BUF(1), LBUF, POSITION, COMM, IERR )
++c      CALL MPI_PACK( LRB%M, 
++c     &     1, MPI_INTEGER,
++c     &     BUF(1), LBUF, POSITION, COMM, IERR )
++c      CALL MPI_PACK( LRB%N,
++c     &     1, MPI_INTEGER,
++c     &     BUF(1), LBUF, POSITION, COMM, IERR )
++c      CALL MPI_PACK( LRB%KSVD,
++c     &     1, MPI_INTEGER,
++c     &     BUF(1), LBUF, POSITION, COMM, IERR )
+       IF (LRB%ISLR) THEN
+         IF (LRB%K .GT. 0) THEN
+-          CALL MPI_PACK( LRB%Q(1,1), 
+-     &      LRB%M*LRB%K,
+-     &      MPI_DOUBLE_PRECISION, BUF(1), LBUF, POSITION, COMM, IERR )
+-          CALL MPI_PACK( LRB%R(1,1),
+-     &      LRB%N*LRB%K, MPI_DOUBLE_PRECISION,
+-     &      BUF(1), LBUF, POSITION, COMM, IERR )
++c ssg         CALL MPI_PACK( LRB%Q(1,1), 
++c     &      LRB%M*LRB%K,
++c     &      MPI_DOUBLE_PRECISION, BUF(1), LBUF, POSITION, COMM, IERR )
++c          CALL MPI_PACK( LRB%R(1,1),
++c     &      LRB%N*LRB%K, MPI_DOUBLE_PRECISION,
++c     &      BUF(1), LBUF, POSITION, COMM, IERR )
+         ENDIF
+       ELSE
+-        CALL MPI_PACK( LRB%Q(1,1), LRB%M*LRB%N
+-     &     ,MPI_DOUBLE_PRECISION,
+-     &     BUF(1), LBUF, POSITION, COMM, IERR )
++c ssg       CALL MPI_PACK( LRB%Q(1,1), LRB%M*LRB%N
++c     &     ,MPI_DOUBLE_PRECISION,
++c     &     BUF(1), LBUF, POSITION, COMM, IERR )
+       ENDIF
+       RETURN
+       END SUBROUTINE DMUMPS_MPI_PACK_LRB
+@@ -3303,28 +3310,28 @@
+       TYPE (LRB_TYPE), INTENT(OUT) :: LRB
+       INTEGER(8) :: KEEP8(150)
+       LOGICAL :: ISLR
+-      INTEGER :: ISLR_INT
++      INTEGER :: ISLR_INT=0 ! ssg 
+       INTEGER :: LRFORM, K, M, N, KSVD
+       INCLUDE 'mpif.h'
+       INCLUDE 'mumps_tags.h'
+       IERR = 0
+-      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
+-     &               ISLR_INT, 1, MPI_INTEGER, COMM, IERR )
+-      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
+-     &               LRFORM, 1,
+-     &               MPI_INTEGER, COMM, IERR )
+-      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
+-     &               K, 1,
+-     &               MPI_INTEGER, COMM, IERR )
+-      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
+-     &               M, 1,
+-     &               MPI_INTEGER, COMM, IERR )
+-      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
+-     &               N, 1,
+-     &               MPI_INTEGER, COMM, IERR )
+-      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
+-     &               KSVD, 1,
+-     &               MPI_INTEGER, COMM, IERR )
++C ssg      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
++C     &               ISLR_INT, 1, MPI_INTEGER, COMM, IERR )
++c      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
++c     &               LRFORM, 1,
++c     &               MPI_INTEGER, COMM, IERR )
++c      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
++c     &               K, 1,
++c     &               MPI_INTEGER, COMM, IERR )
++c      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
++c     &               M, 1,
++c     &               MPI_INTEGER, COMM, IERR )
++c      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
++c     &               N, 1,
++c     &               MPI_INTEGER, COMM, IERR )
++c      CALL MPI_UNPACK( BUFR, LBUFR_BYTES, POSITION,
++c     &               KSVD, 1,
++c     &               MPI_INTEGER, COMM, IERR )
+       IF (ISLR_INT .eq. 1) THEN
+         ISLR = .TRUE.
+       ELSE

@@ -1,0 +1,48 @@
+--- dfac_lr.F	2019-06-14 16:46:29.000000000 +0200
++++ dfac_lr.F	2020-01-22 15:29:18.438582823 +0100
+@@ -1472,7 +1472,9 @@
+       INTEGER,intent(in) :: COMPRESS_MID_PRODUCT, KPERCENT_RMB, TOL_OPT
+       DOUBLE PRECISION,intent(in) :: TOLEPS
+       LOGICAL, intent(in) :: LBANDSLAVE
+-      INTEGER :: M, N, allocok
++C ssg
++      INTEGER :: N=0
++      INTEGER :: M, allocok
+       INTEGER :: I, II, J, K, KK, IND_L, IND_U, IBIS,
+      &           K_ORDER(NB_INASM), K_RANK(NB_INASM)
+       INTEGER, ALLOCATABLE :: POS_LIST(:), RANK_LIST(:)
+@@ -1898,25 +1900,25 @@
+      &               .AND. BIP + M - 1 .GT. LDA21
+      &               .AND..NOT.CBASM_TOFIX) THEN
+             CALL dgemm('T', 'T', N, LDA21-BIP+1, K, ONE ,
+-     &          BLR_PANEL(IP-CURRENT_BLR)%R(1,1) , K, 
+-     &          BLR_PANEL(IP-CURRENT_BLR)%Q(1,1) , M, 
++     &          BLR_PANEL(IP-CURRENT_BLR)%R , K, 
++     &          BLR_PANEL(IP-CURRENT_BLR)%Q , M, 
+      &          ZERO, A(POSELT_BLOCK), int(LD_BLK_IN_FRONT))
+             CALL dgemm('T', 'T', N, BIP+M-LDA21-1, K, ONE ,
+-     &          BLR_PANEL(IP-CURRENT_BLR)%R(1,1) , K, 
+-     &          BLR_PANEL(IP-CURRENT_BLR)%Q(LDA21-BIP+2,1) , M, 
++     &          BLR_PANEL(IP-CURRENT_BLR)%R , K, 
++     &          BLR_PANEL(IP-CURRENT_BLR)%Q((LDA21-BIP+2):,1:) , M, 
+      &          ZERO, A(POSELT_BLOCK+int(LDA21-BIP,8)*int(LDA11,8)),
+      &          LDA21)
+           ELSE
+             CALL dgemm('T', 'T', N, M, K, ONE ,
+-     &          BLR_PANEL(IP-CURRENT_BLR)%R(1,1) , K, 
+-     &          BLR_PANEL(IP-CURRENT_BLR)%Q(1,1) , M, 
++     &          BLR_PANEL(IP-CURRENT_BLR)%R , K, 
++     &          BLR_PANEL(IP-CURRENT_BLR)%Q , M, 
+      &          ZERO, A(POSELT_BLOCK), int(LD_BLK_IN_FRONT))
+           ENDIF
+         ELSE 
+            CALL dgemm('N', 'N', M, ONLY_NELIM, K, ONE ,
+-     &          BLR_PANEL(IP-CURRENT_BLR)%Q(1,1) , M, 
+-     &          BLR_PANEL(IP-CURRENT_BLR)%R(1,N-ONLY_NELIM+1) , K, ZERO,
+-     &          A(POSELT_BLOCK+int(N-ONLY_NELIM,8)*int(LDA11,8)), LDA11)
++     &         BLR_PANEL(IP-CURRENT_BLR)%Q , M, 
++     &         BLR_PANEL(IP-CURRENT_BLR)%R(1:,(N-ONLY_NELIM+1):),K,ZERO,
++     &         A(POSELT_BLOCK+int(N-ONLY_NELIM,8)*int(LDA11,8)), LDA11)
+         ENDIF
+         IF (COUNT_FLOPS) THEN
+           PROMOTE_COST = 2.0D0*M*K*ONLY_NELIM

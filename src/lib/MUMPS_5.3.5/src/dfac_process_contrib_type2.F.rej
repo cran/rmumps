@@ -1,0 +1,11 @@
+--- dfac_process_contrib_type2.F	2019-06-14 16:46:28.000000000 +0200
++++ dfac_process_contrib_type2.F	2020-01-27 17:00:58.204549674 +0100
+@@ -101,7 +107,7 @@
+ #endif
+       LOGICAL :: CB_IS_LR
+       INTEGER T1, T2, COUNT_RATE
+-      INTEGER :: CB_IS_LR_INT, NB_BLR_COLS, allocok,
++      INTEGER :: CB_IS_LR_INT=0, NB_BLR_COLS, allocok,
+      &           NBROWS_PACKET_2PACK, PANEL_BEG_OFFSET
+       INTEGER(8) :: LA_TEMP
+       DOUBLE PRECISION, ALLOCATABLE :: A_TEMP(:)
