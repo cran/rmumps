@@ -1,6 +1,6 @@
-5ad665c776b0f463f041e687e7fbc346 *DESCRIPTION
+123b2d367e697dc0f9d299ef6e0ba904 *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-ceb9a6f97f22b3a01e568274867e9bd4 *NEWS
+51150fa0665f59737df5e46e602cfc1a *NEWS
 ea905e07b8eb5383d8c676887a80eee3 *R/RcppExports.R
 92eedf96a9c97879e89e787fc05db776 *R/inc_os.R
 28c781e8574bec0dddf95efdf08011d7 *R/methods.R
@@ -208,7 +208,7 @@ f4c89b7b7d9445c1401040a93495d141 *src/lib/MUMPS_5.2.1/src/drank_revealing.F
 8bff977589900a600070f437693a5cee *src/lib/MUMPS_5.2.1/src/dsol_bwd_aux.F
 f1fb383c97821d72327f6fe899e6b5c0 *src/lib/MUMPS_5.2.1/src/dsol_c.F
 143d473f6dde1edc292fe4f711a5f049 *src/lib/MUMPS_5.2.1/src/dsol_distrhs.F
-46ef3d25cbc72bf2470d40c6d1702065 *src/lib/MUMPS_5.2.1/src/dsol_driver.F
+7ba5e31a5b0c9ac99128d1b0fed2ffb1 *src/lib/MUMPS_5.2.1/src/dsol_driver.F
 1b0dee2f7411ac827ba4d0c9863e0c10 *src/lib/MUMPS_5.2.1/src/dsol_fwd.F
 a800f7e9549b46033306ccf65d017cca *src/lib/MUMPS_5.2.1/src/dsol_fwd_aux.F
 598dcfb4b370b4d5ca720f261afbfe3b *src/lib/MUMPS_5.2.1/src/dsol_lr.F
