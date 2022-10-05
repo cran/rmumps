@@ -1,3 +1,9 @@
+Version 5.2.1-18
+================
+
+* 2022-10-03
+ -fixed metis/gklib compilation error from clang-15 signaled by CRAN team
+
 Version 5.2.1-15
 ================
 
@@ -14,7 +20,7 @@ Version 5.2.1-13
 ================
 
 * 2021-07-19
- - fixed -Wswitch signaled by CRAM team
+ - fixed -Wswitch signaled by CRAN team
  
 Version 5.2.1-12
 ================
