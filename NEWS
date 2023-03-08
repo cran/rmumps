@@ -1,3 +1,11 @@
+Version 5.2.1-23
+================
+
+* 2023-03-08
+ - added set_perm_in() method to set user provided permutation
+ - fixed buffer overflow in memset() call, likely due to gcc optimization (signaled by CRAN team)
+ - updated CITATION as recommended by win-builder header
+
 Version 5.2.1-22
 ================
 

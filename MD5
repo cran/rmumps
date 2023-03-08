@@ -1,14 +1,14 @@
-527d3c17583bfd7a6f2c70ed398735bc *DESCRIPTION
+f421ad7f9bed56cc2ef880eaecc13cc6 *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-1d8f44e5b63cad5590c525eef30bab86 *NEWS
+770b83e313c89b450752ef039e8828c6 *NEWS
 ea905e07b8eb5383d8c676887a80eee3 *R/RcppExports.R
 0249ea6e808406e55cc3ace637548614 *R/inc_os.R
-28c781e8574bec0dddf95efdf08011d7 *R/methods.R
+1f3c6991de1bc077250af608ee294b23 *R/methods.R
 68b329da9893e34099c7d8ad5cb9c940 *R/package.R
 314fe6344b808d5186b584dc7dc9b095 *R/zzz.R
 8d422e0f2578c6a3cbe300e3a35d3b48 *README.md
 f42d595daccd792ceac94cb9ee9fd2dc *cleanup
-0f02ed9c5e1f51d00b83e438fcc34b56 *inst/CITATION
+f337331736bc5b14e6fe5f0029d2fde4 *inst/CITATION
 c2b6dcfdef2283ba0cc3d8732b7694f5 *inst/COPYRIGHTS
 95fc8e65f29788c22891f5c42782bb99 *inst/examples/err.txt
 0205a7a866d2d3e19246dc935aa3a546 *inst/examples/random_matrix.R
@@ -21,7 +21,7 @@ dee2a7e42ae9b5115e118e30087fce11 *inst/examples/random_stm.R
 16a867f219cf7140843d2fb1c3b9f7f6 *inst/include/dmumps_struc.h
 20522432c975febb55840d9dd0e9724b *inst/include/mumps_c_types.h
 dc28e1a3bf87121519306ce1b311de88 *inst/include/mumps_compat.h
-c7b026681e4081f733ee7c4e921e5814 *inst/include/rmumps.h
+aba195886f1070d089d444c3491f715c *inst/include/rmumps.h
 5b66657287594b30400866fad7724bfd *inst/include/rmumps_RcppExports.h
 aba92c4b22e1a337ec98fc44244853a5 *man/RMUMPS_PERM.Rd
 0bdf79e858b8e2c2ca3f7189c49a0f1a *man/Rmumps.Rd
@@ -33,9 +33,9 @@ c968e4616315a922003df11935636fba *man/Rmumps__set_permutation.Rd
 2e70c51d5c6c42b85939129cd467ca37 *man/Rmumps__solveptr.Rd
 2887f0afc5be3bfbc6252554e673e575 *man/Rmumps__triplet.Rd
 4718a4daf2a97ef93d2430e1ef661906 *man/rmumps-package.Rd
-f510ffc0f761f2b8554506e7a221d458 *src/Makevars
+29dca75f03a0f5535361e5934b9e223d *src/Makevars
 d05bf5aad2ebe635bd05ae83ecaf0332 *src/Makevars.omp
-f510ffc0f761f2b8554506e7a221d458 *src/Makevars.seq
+29dca75f03a0f5535361e5934b9e223d *src/Makevars.seq
 42ddfabe80c837737b356b20241a365c *src/RcppExports.cpp
 432235f2f7978aa691c96a763c9dfaea *src/get_cnst.cpp
 7394367fa48d50a485aa096ddb6a7861 *src/init.c
@@ -308,7 +308,7 @@ cebcfd88aa1f25270254ebc3ce309e56 *src/lib/metis-5.1.0/GKlib/gk_mkrandom.h
 e6d2834efe4b81a073fdcaa0ed9d4126 *src/lib/metis-5.1.0/GKlib/gk_proto.h
 a3e4c356cae266d0c91235fe45ea489d *src/lib/metis-5.1.0/GKlib/gk_struct.h
 7672ce793e35ca4faeb80572be6cda0c *src/lib/metis-5.1.0/GKlib/gk_types.h
-8eddc6a4620f1de2b6a887514ef924ad *src/lib/metis-5.1.0/GKlib/gkregex.c
+6bc6e5b245c0c5161342b9ab27f99642 *src/lib/metis-5.1.0/GKlib/gkregex.c
 ff440866504a341a50bfb343a94f76c8 *src/lib/metis-5.1.0/GKlib/gkregex.h
 6022dced3a7cd15d9799a41956d817a9 *src/lib/metis-5.1.0/GKlib/graph.c
 f6e736819d13d936f58b252fee9dbd9f *src/lib/metis-5.1.0/GKlib/htable.c
@@ -450,7 +450,7 @@ a67e5ef2243d2219053a0a06aaa92248 *src/lib/scotch_6.0.9/src/esmumps/order.c
 2478db41c8ad96ed9e71e2924f42e44e *src/lib/scotch_6.0.9/src/esmumps/order_scotch_graph.c
 e6da1795da6b42252e73e8f07dab0ebe *src/lib/scotch_6.0.9/src/esmumps/symbol.c
 4a336e29452be2ed9aae0fc878d26ff9 *src/lib/scotch_6.0.9/src/esmumps/symbol.h
-fac6e0befbd4b20c3ac6b172b452d9c0 *src/lib/scotch_6.0.9/src/esmumps/symbol_fax.c
+ee5167c4f136694f0182e9b0223674eb *src/lib/scotch_6.0.9/src/esmumps/symbol_fax.c
 076614c0ea4738e9f9f4179ae98b4a29 *src/lib/scotch_6.0.9/src/esmumps/symbol_fax.h
 4cdde91480721ce79b6a8cf463bcdda8 *src/lib/scotch_6.0.9/src/esmumps/symbol_fax_graph.c
 2cc1f3ceeffe339c38025156e75a20e1 *src/lib/scotch_6.0.9/src/libscotch/Makefile
@@ -1060,6 +1060,6 @@ dfcb0150eb9232b87d53f1c2f30ba502 *src/lib/scotch_6.0.9/src/scotch/mcv.h
 09c2f305544522079bb18352c1e41833 *src/lib/scotch_6.0.9/src/scotch/mord.h
 e82db71c528828b67e8c8ed873ee58ba *src/lib/scotch_6.0.9/src/scotch/mtst.c
 16b9fd60210155aa16e89a9e74e45925 *src/lib/scotch_6.0.9/src/scotch/mtst.h
-2e4e5a31e4580f53d59b687b763a0580 *src/rmumps_module.cpp
+ec7b5fb6aab9b8044b408e5a2c47455e *src/rmumps_module.cpp
 f9a0ffe266afc3a1cad07ed359e02811 *tests/testthat.R
 9466c2de36e2f7e3a4b86bcd1637854e *tests/testthat/test_rmumps.R
