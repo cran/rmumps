@@ -1,7 +1,7 @@
-71e1073f43b540fd383e9c1b8539e144 *DESCRIPTION
+f0598345aaed29e8fdc36dba5f52fc1b *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-d01dabba7259c3ba86e7b1440a074279 *NEWS
-ea905e07b8eb5383d8c676887a80eee3 *R/RcppExports.R
+dc3db4c8c1dce817c08d3367a7e91668 *NEWS
+425b70021bb3f880666bae6045ccd125 *R/RcppExports.R
 0249ea6e808406e55cc3ace637548614 *R/inc_os.R
 1f3c6991de1bc077250af608ee294b23 *R/methods.R
 68b329da9893e34099c7d8ad5cb9c940 *R/package.R
@@ -32,11 +32,11 @@ ec3fb303b51de1c42109c3d7dfc50d64 *man/Rmumps__set_mat_ptr.Rd
 c968e4616315a922003df11935636fba *man/Rmumps__set_permutation.Rd
 2e70c51d5c6c42b85939129cd467ca37 *man/Rmumps__solveptr.Rd
 2887f0afc5be3bfbc6252554e673e575 *man/Rmumps__triplet.Rd
-8de699feadaefc74f5226ada5f21458c *man/rmumps-package.Rd
+35bb4fa6c4bec2e01a4ce552c4ecc251 *man/rmumps-package.Rd
 ea311c7f823fc664a0bdb1e7a6380918 *src/Makevars
 d05bf5aad2ebe635bd05ae83ecaf0332 *src/Makevars.omp
 ea311c7f823fc664a0bdb1e7a6380918 *src/Makevars.seq
-42ddfabe80c837737b356b20241a365c *src/RcppExports.cpp
+99eb9e8517adec765f9b0e844572e60d *src/RcppExports.cpp
 432235f2f7978aa691c96a763c9dfaea *src/get_cnst.cpp
 7394367fa48d50a485aa096ddb6a7861 *src/init.c
 733a2b0645626f1925601fbf886af170 *src/lib/MUMPS_5.2.1/CREDITS
@@ -532,7 +532,7 @@ af5f6419654207dd4926ffa6b6774e44 *src/lib/scotch_6.0.9/src/libscotch/bgraph_chec
 7293f5319c6e0aca61f5a6c63700db6d *src/lib/scotch_6.0.9/src/libscotch/common.c
 b2f4fcd04fe2d41c106d27c89346f736 *src/lib/scotch_6.0.9/src/libscotch/common.h
 7b09dd4ac12b86aca39ab30e04938c25 *src/lib/scotch_6.0.9/src/libscotch/common_error.c
-b6b55d19b6e6b2f19c88f2cfdce47b72 *src/lib/scotch_6.0.9/src/libscotch/common_file.c
+925c36e9728fa5d477a02d93272c479c *src/lib/scotch_6.0.9/src/libscotch/common_file.c
 66057558b83b763a744eb37563f724c9 *src/lib/scotch_6.0.9/src/libscotch/common_file.h
 197e60fac9f98d929664f5039800b7e9 *src/lib/scotch_6.0.9/src/libscotch/common_file_compress.c
 b543745eb555b1f02599726028e54b0d *src/lib/scotch_6.0.9/src/libscotch/common_file_compress.h
