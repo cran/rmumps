@@ -41,7 +41,7 @@ libdir		= ../../lib
 include ../Makefile.inc$(INC_OS)
 
 %$(OBJ)	:	%.c
-				$(CC) $(HCFLAGS) -O0 $(CLIBFLAGS) -I$(includedir) -c $(<) -o $(@)
+				$(CC) $(HCFLAGS) -D_FORTIFY_SOURCES=3 $(CLIBFLAGS) -I$(includedir) -c $(<) -o $(@)
 
 %$(EXE)	:	%.c
 		 		$(CC) $(HCFLAGS) -I$(includedir) $(<) -o $(@) -L. -lesmumps -L$(libdir) -lscotch -lscotcherrexit $(HLDFLAGS)

@@ -1,6 +1,6 @@
-f0598345aaed29e8fdc36dba5f52fc1b *DESCRIPTION
+37fdf8ac36ac5171c31bbe688766e81a *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-dc3db4c8c1dce817c08d3367a7e91668 *NEWS
+abf4cac63a05b5bb42d3bb5fc3099c4d *NEWS
 425b70021bb3f880666bae6045ccd125 *R/RcppExports.R
 0249ea6e808406e55cc3ace637548614 *R/inc_os.R
 1f3c6991de1bc077250af608ee294b23 *R/methods.R
@@ -32,10 +32,10 @@ ec3fb303b51de1c42109c3d7dfc50d64 *man/Rmumps__set_mat_ptr.Rd
 c968e4616315a922003df11935636fba *man/Rmumps__set_permutation.Rd
 2e70c51d5c6c42b85939129cd467ca37 *man/Rmumps__solveptr.Rd
 2887f0afc5be3bfbc6252554e673e575 *man/Rmumps__triplet.Rd
-35bb4fa6c4bec2e01a4ce552c4ecc251 *man/rmumps-package.Rd
-ea311c7f823fc664a0bdb1e7a6380918 *src/Makevars
+4dee8418782c82cd76414af6157f2463 *man/rmumps-package.Rd
+acfad50a35a6bf1920191f861f60d183 *src/Makevars
 d05bf5aad2ebe635bd05ae83ecaf0332 *src/Makevars.omp
-ea311c7f823fc664a0bdb1e7a6380918 *src/Makevars.seq
+acfad50a35a6bf1920191f861f60d183 *src/Makevars.seq
 99eb9e8517adec765f9b0e844572e60d *src/RcppExports.cpp
 432235f2f7978aa691c96a763c9dfaea *src/get_cnst.cpp
 7394367fa48d50a485aa096ddb6a7861 *src/init.c
@@ -65,7 +65,7 @@ de2a26a554d9aa2c7739b2715ba15ffa *src/lib/MUMPS_5.2.1/Make.inc/Makefile.debian.P
 788795a4e0f6ef95d4dc800b42f936c9 *src/lib/MUMPS_5.2.1/Make.inc/Makefile.debian.SEQ
 739c85ea6fc98ebc270fd338e35d955a *src/lib/MUMPS_5.2.1/Make.inc/Makefile.inc.generic
 85798af2355722b771dbaece00637534 *src/lib/MUMPS_5.2.1/Make.inc/Makefile.inc.generic.SEQ
-8339c5bd9215b0488265eaa24cad59ba *src/lib/MUMPS_5.2.1/Makefile
+dea22aeb205b2e1017f79edaa6c90b6b *src/lib/MUMPS_5.2.1/Makefile
 2d49baa787f92822e33acffe94e17ce7 *src/lib/MUMPS_5.2.1/Makefile.inc
 94c3f38c7e05d6f08ced0d9d096712b8 *src/lib/MUMPS_5.2.1/PORD/README
 687be451820d81d1d24c87d6d63b5851 *src/lib/MUMPS_5.2.1/PORD/include/const.h
@@ -106,7 +106,7 @@ e273c797d5b98bef05dd02da07f3809f *src/lib/MUMPS_5.2.1/include/smumps_root.h
 78de5be93e458210b9d06ad855696af0 *src/lib/MUMPS_5.2.1/include/zmumps_c.h
 08a69d859230a7d18091b98d8b5a970c *src/lib/MUMPS_5.2.1/include/zmumps_root.h
 d802dd94b93eb923b4d7e37dafde9fa9 *src/lib/MUMPS_5.2.1/include/zmumps_struc.h
-a3c3d5384dd2373aa2952bcbf0cb6919 *src/lib/MUMPS_5.2.1/libseq/Makefile
+14fdce34d392bbc11b54032843b801f0 *src/lib/MUMPS_5.2.1/libseq/Makefile
 3a9cfacc012742d720f0064c535620ad *src/lib/MUMPS_5.2.1/libseq/README
 f69a745279528831d297787d485879af *src/lib/MUMPS_5.2.1/libseq/elapse.c
 344d008255690f206338f04d3ab1b53a *src/lib/MUMPS_5.2.1/libseq/elapse.h
@@ -114,7 +114,7 @@ f69a745279528831d297787d485879af *src/lib/MUMPS_5.2.1/libseq/elapse.c
 4eae1060839c8d50e535834871e3f0ec *src/lib/MUMPS_5.2.1/libseq/mpi.h
 222a5f45bd9a91f6da873dca2f6c9f62 *src/lib/MUMPS_5.2.1/libseq/mpic.c
 4c25eba3275e3c13290358280744e54c *src/lib/MUMPS_5.2.1/libseq/mpif.h
-e2389372549b009602cae2cd5758dfc4 *src/lib/MUMPS_5.2.1/src/Makefile
+322795765a6ccda43a28198bd42018f3 *src/lib/MUMPS_5.2.1/src/Makefile
 3debd391b4f1ac9ace086743951f7e29 *src/lib/MUMPS_5.2.1/src/ana_AMDMF.F
 f206dac88d4df894195b62ebb1bb93ba *src/lib/MUMPS_5.2.1/src/ana_omp_m.F
 cf7fcbf74e3728ec96ba79698282ce2e *src/lib/MUMPS_5.2.1/src/ana_orderings.F
@@ -184,7 +184,7 @@ c56963d78b88379df34832418eb41acf *src/lib/MUMPS_5.2.1/src/dfac_sol_pool.F
 7fb39b7d80f02c1b6ee2e4cbb8885690 *src/lib/MUMPS_5.2.1/src/dlr_core.F
 0eb48b99509a7a5a9d00452ee1a99de0 *src/lib/MUMPS_5.2.1/src/dlr_stats.F
 1629fee4e493e32ba583f675106140c0 *src/lib/MUMPS_5.2.1/src/dlr_type.F
-c870cd9f78d3f9f2927f1292a6e640e9 *src/lib/MUMPS_5.2.1/src/dmumps_comm_buffer.F
+97291cb99d70bfa6a2b89542d164716c *src/lib/MUMPS_5.2.1/src/dmumps_comm_buffer.F
 93f23c4a62df3505d5648125a708f332 *src/lib/MUMPS_5.2.1/src/dmumps_config_file.F
 43ae5b9a1537adbf0567701143195dda *src/lib/MUMPS_5.2.1/src/dmumps_driver.F
 110b3b6a2e00fea71dd5108eca9fae14 *src/lib/MUMPS_5.2.1/src/dmumps_f77.F
@@ -203,10 +203,10 @@ e1049dbd4f98abc3d41a42d85a8e9794 *src/lib/MUMPS_5.2.1/src/domp_tps_m.F
 da838d623e05ee83b25987505a7f3619 *src/lib/MUMPS_5.2.1/src/dooc_panel_piv.F
 c4a109ab07a5f3d0cfb8d7ce785726b8 *src/lib/MUMPS_5.2.1/src/double_linked_list.F
 f4c89b7b7d9445c1401040a93495d141 *src/lib/MUMPS_5.2.1/src/drank_revealing.F
-980227c68df6d517d110365c30a6e22c *src/lib/MUMPS_5.2.1/src/dsol_aux.F
+7f9ab1b296d97f3a687b6416d15016da *src/lib/MUMPS_5.2.1/src/dsol_aux.F
 0b68309121e952e6e4cbf9910903c662 *src/lib/MUMPS_5.2.1/src/dsol_bwd.F
 8bff977589900a600070f437693a5cee *src/lib/MUMPS_5.2.1/src/dsol_bwd_aux.F
-f1fb383c97821d72327f6fe899e6b5c0 *src/lib/MUMPS_5.2.1/src/dsol_c.F
+6420f34f0a3db82fb59540f8592d1d78 *src/lib/MUMPS_5.2.1/src/dsol_c.F
 143d473f6dde1edc292fe4f711a5f049 *src/lib/MUMPS_5.2.1/src/dsol_distrhs.F
 7ba5e31a5b0c9ac99128d1b0fed2ffb1 *src/lib/MUMPS_5.2.1/src/dsol_driver.F
 1b0dee2f7411ac827ba4d0c9863e0c10 *src/lib/MUMPS_5.2.1/src/dsol_fwd.F
@@ -277,7 +277,7 @@ dc0eac60b5a3e28966e6b46832d72dc9 *src/lib/MUMPS_5.2.1/src/mumps_type_size.F
 7fcde493b1311a923b7f38ad3c74bab5 *src/lib/MUMPS_5.2.1/src/omp_tps_common_m.F
 b7b61507c446dc5ed675c202bfc5318f *src/lib/MUMPS_5.2.1/src/sol_common.F
 99536dd146e3ef0808081ad009f4d06a *src/lib/MUMPS_5.2.1/src/tools_common.F
-f559eaaf52d9658ea41f9fc98dadd8c6 *src/lib/Makefile
+2012c996ece2254900d95ff9e12af867 *src/lib/Makefile
 1db272faa46cd8a9992f5d5502941d79 *src/lib/metis-5.1.0/BUILD-Windows.txt
 255467d18fdeaa85c30cdaca641be09a *src/lib/metis-5.1.0/BUILD.txt
 d48d9aea01ab2c8a17490cd535ea91a0 *src/lib/metis-5.1.0/Changelog
@@ -432,7 +432,7 @@ ceecf1715cbf78f945781ae7199a77a8 *src/lib/scotch_6.0.9/src/Makefile.inc.rmumps
 d41d8cd98f00b204e9800998ecf8427e *src/lib/scotch_6.0.9/src/Makefile.inc.sunos
 a95b400120c735b70be8cadb77b4fa86 *src/lib/scotch_6.0.9/src/Makefile.inc.win
 6e3ded8c082f298d2b52d6c3a8f23e87 *src/lib/scotch_6.0.9/src/Makefile.orig
-1110b0fd33a21e8b37eaa77165848ce7 *src/lib/scotch_6.0.9/src/esmumps/Makefile
+51a5a1a27131f156de8496ea552796ff *src/lib/scotch_6.0.9/src/esmumps/Makefile
 ffa55b05df28fe595a3d7e81a196eafd *src/lib/scotch_6.0.9/src/esmumps/Makefile.orig
 573ed5062e2823308549d0904648f1f4 *src/lib/scotch_6.0.9/src/esmumps/dof.c
 6c304a1ca4ef2242cf48f9a8ce3a63e6 *src/lib/scotch_6.0.9/src/esmumps/dof.h
