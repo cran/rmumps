@@ -1,6 +1,6 @@
-37fdf8ac36ac5171c31bbe688766e81a *DESCRIPTION
+faf4d736b9dcd2fcfa4aa6aa1656f28d *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-abf4cac63a05b5bb42d3bb5fc3099c4d *NEWS
+6ba182df941d6241e15598b261d73e42 *NEWS
 425b70021bb3f880666bae6045ccd125 *R/RcppExports.R
 0249ea6e808406e55cc3ace637548614 *R/inc_os.R
 1f3c6991de1bc077250af608ee294b23 *R/methods.R
@@ -9,7 +9,7 @@ abf4cac63a05b5bb42d3bb5fc3099c4d *NEWS
 8d422e0f2578c6a3cbe300e3a35d3b48 *README.md
 f42d595daccd792ceac94cb9ee9fd2dc *cleanup
 f337331736bc5b14e6fe5f0029d2fde4 *inst/CITATION
-23e66966343e5c38624e66b18947a31b *inst/COPYRIGHTS
+dcb4d7fe09ff88ab615cf69961b528fd *inst/COPYRIGHTS
 95fc8e65f29788c22891f5c42782bb99 *inst/examples/err.txt
 0205a7a866d2d3e19246dc935aa3a546 *inst/examples/random_matrix.R
 dee2a7e42ae9b5115e118e30087fce11 *inst/examples/random_stm.R
@@ -432,7 +432,7 @@ ceecf1715cbf78f945781ae7199a77a8 *src/lib/scotch_6.0.9/src/Makefile.inc.rmumps
 d41d8cd98f00b204e9800998ecf8427e *src/lib/scotch_6.0.9/src/Makefile.inc.sunos
 a95b400120c735b70be8cadb77b4fa86 *src/lib/scotch_6.0.9/src/Makefile.inc.win
 6e3ded8c082f298d2b52d6c3a8f23e87 *src/lib/scotch_6.0.9/src/Makefile.orig
-51a5a1a27131f156de8496ea552796ff *src/lib/scotch_6.0.9/src/esmumps/Makefile
+3fa90e1d492cd8394c851ba8bc7b6157 *src/lib/scotch_6.0.9/src/esmumps/Makefile
 ffa55b05df28fe595a3d7e81a196eafd *src/lib/scotch_6.0.9/src/esmumps/Makefile.orig
 573ed5062e2823308549d0904648f1f4 *src/lib/scotch_6.0.9/src/esmumps/dof.c
 6c304a1ca4ef2242cf48f9a8ce3a63e6 *src/lib/scotch_6.0.9/src/esmumps/dof.h
