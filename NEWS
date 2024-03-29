@@ -1,8 +1,14 @@
+Version 5.2.1-29
+================
+
+* 2024-03-29
+ - added method 'log2det()' (requested in issue #2)
+
 Version 5.2.1-28
 ================
 
 * 2024-02-26
- - fixed warnings about _FORTIFY_SOURCE and fixed form fortran signaled by CRAN
+ - fixed gcc UBSAN issues signaled by CRAN
 
 Version 5.2.1-27
 ================

@@ -1,6 +1,6 @@
-faf4d736b9dcd2fcfa4aa6aa1656f28d *DESCRIPTION
+4444669b9987bf0ee9a5b90f6f69401b *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-6ba182df941d6241e15598b261d73e42 *NEWS
+21770ae30dd4c994aad3e0c4ac5461a0 *NEWS
 425b70021bb3f880666bae6045ccd125 *R/RcppExports.R
 0249ea6e808406e55cc3ace637548614 *R/inc_os.R
 1f3c6991de1bc077250af608ee294b23 *R/methods.R
@@ -21,7 +21,7 @@ dee2a7e42ae9b5115e118e30087fce11 *inst/examples/random_stm.R
 16a867f219cf7140843d2fb1c3b9f7f6 *inst/include/dmumps_struc.h
 20522432c975febb55840d9dd0e9724b *inst/include/mumps_c_types.h
 dc28e1a3bf87121519306ce1b311de88 *inst/include/mumps_compat.h
-aba195886f1070d089d444c3491f715c *inst/include/rmumps.h
+27c6cc400220e33b0ed3c92bb156d38e *inst/include/rmumps.h
 5b66657287594b30400866fad7724bfd *inst/include/rmumps_RcppExports.h
 aba92c4b22e1a337ec98fc44244853a5 *man/RMUMPS_PERM.Rd
 0bdf79e858b8e2c2ca3f7189c49a0f1a *man/Rmumps.Rd
@@ -32,7 +32,7 @@ ec3fb303b51de1c42109c3d7dfc50d64 *man/Rmumps__set_mat_ptr.Rd
 c968e4616315a922003df11935636fba *man/Rmumps__set_permutation.Rd
 2e70c51d5c6c42b85939129cd467ca37 *man/Rmumps__solveptr.Rd
 2887f0afc5be3bfbc6252554e673e575 *man/Rmumps__triplet.Rd
-4dee8418782c82cd76414af6157f2463 *man/rmumps-package.Rd
+41334589069d94e929b4eb205221ebab *man/rmumps-package.Rd
 acfad50a35a6bf1920191f861f60d183 *src/Makevars
 d05bf5aad2ebe635bd05ae83ecaf0332 *src/Makevars.omp
 acfad50a35a6bf1920191f861f60d183 *src/Makevars.seq
@@ -432,7 +432,7 @@ ceecf1715cbf78f945781ae7199a77a8 *src/lib/scotch_6.0.9/src/Makefile.inc.rmumps
 d41d8cd98f00b204e9800998ecf8427e *src/lib/scotch_6.0.9/src/Makefile.inc.sunos
 a95b400120c735b70be8cadb77b4fa86 *src/lib/scotch_6.0.9/src/Makefile.inc.win
 6e3ded8c082f298d2b52d6c3a8f23e87 *src/lib/scotch_6.0.9/src/Makefile.orig
-3fa90e1d492cd8394c851ba8bc7b6157 *src/lib/scotch_6.0.9/src/esmumps/Makefile
+c6072389485287139085a57b03ef9e04 *src/lib/scotch_6.0.9/src/esmumps/Makefile
 ffa55b05df28fe595a3d7e81a196eafd *src/lib/scotch_6.0.9/src/esmumps/Makefile.orig
 573ed5062e2823308549d0904648f1f4 *src/lib/scotch_6.0.9/src/esmumps/dof.c
 6c304a1ca4ef2242cf48f9a8ce3a63e6 *src/lib/scotch_6.0.9/src/esmumps/dof.h
@@ -452,7 +452,7 @@ e6da1795da6b42252e73e8f07dab0ebe *src/lib/scotch_6.0.9/src/esmumps/symbol.c
 4a336e29452be2ed9aae0fc878d26ff9 *src/lib/scotch_6.0.9/src/esmumps/symbol.h
 ee5167c4f136694f0182e9b0223674eb *src/lib/scotch_6.0.9/src/esmumps/symbol_fax.c
 076614c0ea4738e9f9f4179ae98b4a29 *src/lib/scotch_6.0.9/src/esmumps/symbol_fax.h
-4cdde91480721ce79b6a8cf463bcdda8 *src/lib/scotch_6.0.9/src/esmumps/symbol_fax_graph.c
+63b364bc33ba984abe43e760d2aed49b *src/lib/scotch_6.0.9/src/esmumps/symbol_fax_graph.c
 2cc1f3ceeffe339c38025156e75a20e1 *src/lib/scotch_6.0.9/src/libscotch/Makefile
 1adfeb32506fdeeeb2168a9f885ae931 *src/lib/scotch_6.0.9/src/libscotch/Makefile.orig
 cffe70508fb852311c4de01f2cfcde24 *src/lib/scotch_6.0.9/src/libscotch/arch.c
@@ -1060,6 +1060,6 @@ dfcb0150eb9232b87d53f1c2f30ba502 *src/lib/scotch_6.0.9/src/scotch/mcv.h
 09c2f305544522079bb18352c1e41833 *src/lib/scotch_6.0.9/src/scotch/mord.h
 e82db71c528828b67e8c8ed873ee58ba *src/lib/scotch_6.0.9/src/scotch/mtst.c
 16b9fd60210155aa16e89a9e74e45925 *src/lib/scotch_6.0.9/src/scotch/mtst.h
-edf567d8acb9ad5f7ebf56687a5c83b0 *src/rmumps_module.cpp
+754454a8ddc4dd840f53f77061028da4 *src/rmumps_module.cpp
 f9a0ffe266afc3a1cad07ed359e02811 *tests/testthat.R
-9466c2de36e2f7e3a4b86bcd1637854e *tests/testthat/test_rmumps.R
+2cb391a6fe23573764bb8832aaaff590 *tests/testthat/test_rmumps.R

@@ -41,7 +41,7 @@ libdir		= ../../lib
 include ../Makefile.inc$(INC_OS)
 
 %$(OBJ)	:	%.c
-				$(CC) $(HCFLAGS) -D_FORTIFY_SOURCES=3 $(CLIBFLAGS) -I$(includedir) -c $(<) -o $(@)
+				$(CC) $(HCFLAGS) $(CLIBFLAGS) -I$(includedir) -c $(<) -o $(@)
 
 %$(EXE)	:	%.c
 		 		$(CC) $(HCFLAGS) -I$(includedir) $(<) -o $(@) -L. -lesmumps -L$(libdir) -lscotch -lscotcherrexit $(HLDFLAGS)
@@ -121,7 +121,6 @@ symbol_fax_graph$(OBJ)		:	symbol_fax_graph.c			\
 					order.h					\
 					fax.h					\
 					$(includedir)/scotch.h
-				$(CC) $(HCFLAGS) -D_FORTIFY_SOURCES=3 -O0 $(CLIBFLAGS) -I$(includedir) -c $(<) -o $(@)
 
 esmumps$(OBJ)			:	esmumps.c				\
 					common.h				\
