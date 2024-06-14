@@ -1,7 +1,7 @@
-4444669b9987bf0ee9a5b90f6f69401b *DESCRIPTION
+fa63d1d806da55d623370ec989526fa4 *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-21770ae30dd4c994aad3e0c4ac5461a0 *NEWS
-425b70021bb3f880666bae6045ccd125 *R/RcppExports.R
+8b2ec3152151757e09f0bdc2dac5df1b *NEWS
+cd889d849d69fcbfc3f3e85e23945dd5 *R/RcppExports.R
 0249ea6e808406e55cc3ace637548614 *R/inc_os.R
 1f3c6991de1bc077250af608ee294b23 *R/methods.R
 68b329da9893e34099c7d8ad5cb9c940 *R/package.R
@@ -66,7 +66,7 @@ de2a26a554d9aa2c7739b2715ba15ffa *src/lib/MUMPS_5.2.1/Make.inc/Makefile.debian.P
 739c85ea6fc98ebc270fd338e35d955a *src/lib/MUMPS_5.2.1/Make.inc/Makefile.inc.generic
 85798af2355722b771dbaece00637534 *src/lib/MUMPS_5.2.1/Make.inc/Makefile.inc.generic.SEQ
 dea22aeb205b2e1017f79edaa6c90b6b *src/lib/MUMPS_5.2.1/Makefile
-2d49baa787f92822e33acffe94e17ce7 *src/lib/MUMPS_5.2.1/Makefile.inc
+8e8a47a534d336394624d8ab7225b0d3 *src/lib/MUMPS_5.2.1/Makefile.inc
 94c3f38c7e05d6f08ced0d9d096712b8 *src/lib/MUMPS_5.2.1/PORD/README
 687be451820d81d1d24c87d6d63b5851 *src/lib/MUMPS_5.2.1/PORD/include/const.h
 e1f68039830884c06be1b8d3b07033b6 *src/lib/MUMPS_5.2.1/PORD/include/eval.h
@@ -277,7 +277,7 @@ dc0eac60b5a3e28966e6b46832d72dc9 *src/lib/MUMPS_5.2.1/src/mumps_type_size.F
 7fcde493b1311a923b7f38ad3c74bab5 *src/lib/MUMPS_5.2.1/src/omp_tps_common_m.F
 b7b61507c446dc5ed675c202bfc5318f *src/lib/MUMPS_5.2.1/src/sol_common.F
 99536dd146e3ef0808081ad009f4d06a *src/lib/MUMPS_5.2.1/src/tools_common.F
-2012c996ece2254900d95ff9e12af867 *src/lib/Makefile
+84f5e2a511b29d7d7e52929958c9ef92 *src/lib/Makefile
 1db272faa46cd8a9992f5d5502941d79 *src/lib/metis-5.1.0/BUILD-Windows.txt
 255467d18fdeaa85c30cdaca641be09a *src/lib/metis-5.1.0/BUILD.txt
 d48d9aea01ab2c8a17490cd535ea91a0 *src/lib/metis-5.1.0/Changelog
@@ -929,7 +929,7 @@ fb76a97dbc17aa1ea0d44f90c48160fa *src/lib/scotch_6.0.9/src/libscotch/vgraph_sepa
 dc9b453810d52622bdd8b8b591a7b24c *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_es.h
 0ca59019b62524cc1923f383a4a7d97a *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_fm.c
 c8ea693bf090512e79118acd86fec111 *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_fm.h
-41f27e9299a5997adc24894e69fd2696 *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gg.c
+a6a7c1970d398537c751fd60500b935f *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gg.c
 f3778ab1d98fa992adc4ed26413a3d3c *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gg.h
 77b9e0e3b4ac271af7d865c765450c8c *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gp.c
 9404c2a403435dec32c4a482e6fbc24a *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gp.h

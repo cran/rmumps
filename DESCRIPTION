@@ -1,8 +1,8 @@
 Package: rmumps
 Type: Package
 Title: Wrapper for MUMPS Library
-Version: 5.2.1-29
-Date: 2024-03-29
+Version: 5.2.1-30
+Date: 2024-06-14
 Authors@R: c(person("Serguei", "Sokol", role=c("aut", "cre"), email="sokol@insa-toulouse.fr"),
          person("Emmanuel", "Agullo", role="ctb"),
          person("Patrick", "Amestoy", role=c("ctb", "cph")),
@@ -79,7 +79,7 @@ BugReports: https://github.com/sgsokol/rmumps/issues
 URL: http://www.mumps-solver.org/, https://github.com/sgsokol/rmumps/
 RoxygenNote: 7.0.2
 Encoding: UTF-8
-Packaged: 2024-03-29 16:11:35 UTC; sokol
+Packaged: 2024-06-14 13:19:10 UTC; sokol
 Author: Serguei Sokol [aut, cre],
   Emmanuel Agullo [ctb],
   Patrick Amestoy [ctb, cph],
@@ -134,4 +134,4 @@ Author: Serguei Sokol [aut, cre],
   INSA [cph],
   INRAE [cph]
 Repository: CRAN
-Date/Publication: 2024-03-29 17:50:02 UTC
+Date/Publication: 2024-06-14 14:20:01 UTC
