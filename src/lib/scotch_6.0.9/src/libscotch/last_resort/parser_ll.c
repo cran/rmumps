@@ -817,10 +817,10 @@ YY_DECL
 			(yy_start) = 1;	/* first start state */
 
 		if ( ! scotchyyin )
-			scotchyyin = stdin;
+			scotchyyin = /*stdin*/ 0;
 
 		if ( ! scotchyyout )
-			scotchyyout = stdout;
+			scotchyyout = /*stdout*/ 1;
 
 		if ( ! YY_CURRENT_BUFFER ) {
 			scotchyyensure_buffer_stack ();
@@ -1916,8 +1916,8 @@ static int yy_init_globals (void)
 
 /* Defined in main.c */
 #ifdef YY_STDINIT
-    scotchyyin = stdin;
-    scotchyyout = stdout;
+    scotchyyin = /*stdin*/ 0;
+    scotchyyout = /*stdout*/ 1;
 #else
     scotchyyin = NULL;
     scotchyyout = NULL;

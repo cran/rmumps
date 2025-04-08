@@ -441,7 +441,8 @@ C
       IF ( INODE .eq. KEEP(20) ) THEN
         POSELT = PTRAST(STEP(INODE))
         IF (PTRFAC(STEP(INODE)).NE.POSELT) THEN
-          WRITE(*,*) "ERROR 2 in DMUMPS_FAC_PAR", POSELT
+          call rwarn("ERROR 2 in DMUMPS_FAC_PAR")
+c~           , POSELT
           CALL MUMPS_ABORT()
         ENDIF
         CALL DMUMPS_CHANGE_HEADER
@@ -530,9 +531,10 @@ C
       IF (INFO(1).LT.0) GOTO 640
  200  CONTINUE
       IF ( INODE .eq. KEEP(38) ) THEN
-        WRITE(*,*) 'Error .. in DMUMPS_FAC_PAR: ',
-     &             ' INODE == KEEP(38)'
-        Stop
+c~         call rwarn('Error .. in DMUMPS_FAC_PAR: ')
+C     &             ' INODE == KEEP(38)'
+C        Stop
+        call rexit('Error .. in DMUMPS_FAC_PAR: INODE == KEEP(38)')
       END IF
       IF ( FPERE.EQ.0 ) THEN
         NBROOT_TRAITEES = NBROOT_TRAITEES + 1
@@ -544,13 +546,13 @@ C
            ENDIF
             NBFIN = NBFIN - NBROOT
             IF ( NBFIN .LT. 0 ) THEN
-              WRITE(*,*) ' ERROR 1 in DMUMPS_FAC_PAR: ',
-     &                   ' NBFIN=', NBFIN
+              call rwarn(' ERROR 1 in DMUMPS_FAC_PAR: ')
+c~      &                   ' NBFIN=', NBFIN
               CALL MUMPS_ABORT()
             END IF
             IF ( NBROOT .LT. 0 ) THEN
-              WRITE(*,*) ' ERROR 1 in DMUMPS_FAC_PAR: ',
-     &                   ' NBROOT=', NBROOT
+              call rwarn(' ERROR 1 in DMUMPS_FAC_PAR: ')
+c~      &                   ' NBROOT=', NBROOT
               CALL MUMPS_ABORT()
             END IF
             IF (SLAVEF.GT.1) THEN
@@ -643,8 +645,9 @@ C
                          INFO(1) = -9
                          CALL MUMPS_SET_IERROR(LBUFRX, INFO(2) )
                          IF (LP > 0 )
-     &                   write(LP,*) ' Error allocating, real array ',
-     &                   'of size before DMUMPS_FACTO_ROOT',  LBUFRX
+     &                   call rwarn(' Error allocating, real array '//
+     &                   'of size before DMUMPS_FACTO_ROOT')
+c~      ,  LBUFRX
                          CALL MUMPS_ABORT()
                    ENDIF
                    IS_BUFRX_ALLOCATED = .FALSE.
@@ -702,8 +705,8 @@ C
                     CALL DMUMPS_NEW_FACTOR(KEEP(38),PTRFAC,
      &              KEEP,KEEP8,A,LA, ITMP8, IERR)
                     IF(IERR.LT.0)THEN
-                      WRITE(*,*)MYID,
-     &                ': Internal error in DMUMPS_NEW_FACTOR'
+                      call rwarn(
+     &                ': Internal error in DMUMPS_NEW_FACTOR')
                       CALL MUMPS_ABORT()
                     ENDIF
                   ENDIF 
@@ -749,9 +752,9 @@ C
                     CALL MUMPS_SET_IERROR(int(LRHS_CNTR_MASTER_ROOT, 8),
      &                   INFO(2))
                     IF (LP > 0 )
-     &              write(LP,*) ' Error allocating, real array ',
-     &              'of size before DMUMPS_FACTO_ROOT',
-     &              LRHS_CNTR_MASTER_ROOT
+     &              call rwarn(' Error allocating, real array '//
+     &              'of size before DMUMPS_FACTO_ROOT')
+c~      &              LRHS_CNTR_MASTER_ROOT
                     CALL MUMPS_ABORT()
                   ENDIF
                   FWD_LOCAL_N_RHS = numroc(KEEP(253), root%NBLOCK,
@@ -816,17 +819,19 @@ C
         INTEGER NFRONT, NASS
         NFRONT = HEADER(1)
         IF ( HEADER(2) .ne. 0 ) THEN
-          WRITE(*,*) ' *** CHG_HEADER ERROR 1 :',HEADER(2)
+          call rwarn(' *** CHG_HEADER ERROR 1 :')
+c~           ,HEADER(2)
           CALL MUMPS_ABORT()
         END IF
         NASS   = abs( HEADER( 3 ) )
         IF ( NASS .NE. abs( HEADER( 4 ) ) ) THEN
-          WRITE(*,*) ' *** CHG_HEADER ERROR 2 :',HEADER(3:4)
+          call rwarn(' *** CHG_HEADER ERROR 2 :')
+c~           ,HEADER(3:4)
           CALL MUMPS_ABORT()
         END IF
         IF ( NASS+KEEP253 .NE. NFRONT ) THEN
-          WRITE(*,*) ' *** CHG_HEADER ERROR 3 : not root',
-     &    NASS, KEEP253, NFRONT
+          call rwarn(' *** CHG_HEADER ERROR 3 : not root')
+c~      &    NASS, KEEP253, NFRONT
           CALL MUMPS_ABORT()
         END IF
         HEADER( 1 ) = KEEP253 
