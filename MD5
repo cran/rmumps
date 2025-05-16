@@ -1,6 +1,6 @@
-f57c236ceca43be7fb9d85a401c5d44a *DESCRIPTION
+a5fbf76373be73d798b180fddae4bfaf *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-df649442330ab760c784ff43aeb2fd20 *NEWS
+498c42fa28caab90939052118a0b0dd9 *NEWS
 425b70021bb3f880666bae6045ccd125 *R/RcppExports.R
 0249ea6e808406e55cc3ace637548614 *R/inc_os.R
 1f3c6991de1bc077250af608ee294b23 *R/methods.R
@@ -9,7 +9,7 @@ df649442330ab760c784ff43aeb2fd20 *NEWS
 8d422e0f2578c6a3cbe300e3a35d3b48 *README.md
 66d2dbc6bef01f7d08c6fb61aacb87b4 *cleanup
 f337331736bc5b14e6fe5f0029d2fde4 *inst/CITATION
-dcb4d7fe09ff88ab615cf69961b528fd *inst/COPYRIGHTS
+2619cee9107409b6924e16761506703e *inst/COPYRIGHTS
 95fc8e65f29788c22891f5c42782bb99 *inst/examples/err.txt
 0205a7a866d2d3e19246dc935aa3a546 *inst/examples/random_matrix.R
 dee2a7e42ae9b5115e118e30087fce11 *inst/examples/random_stm.R
@@ -32,7 +32,7 @@ ec3fb303b51de1c42109c3d7dfc50d64 *man/Rmumps__set_mat_ptr.Rd
 c968e4616315a922003df11935636fba *man/Rmumps__set_permutation.Rd
 2e70c51d5c6c42b85939129cd467ca37 *man/Rmumps__solveptr.Rd
 2887f0afc5be3bfbc6252554e673e575 *man/Rmumps__triplet.Rd
-a7c124cc18b9f76debf3241fc028ee8b *man/rmumps-package.Rd
+2c13a5a004179b3098c38908017a4402 *man/rmumps-package.Rd
 4c0dc3cad7c1116aca8f34cbc9d7aa25 *src/Makevars
 d05bf5aad2ebe635bd05ae83ecaf0332 *src/Makevars.omp
 4c0dc3cad7c1116aca8f34cbc9d7aa25 *src/Makevars.seq
@@ -127,7 +127,7 @@ e3279aed52b6cbbf06e64035f6bdcf1a *src/lib/MUMPS_5.2.1/src/dana_LDLT_preprocess.F
 75c35d5f44b107b02bd09e43f1c975f3 *src/lib/MUMPS_5.2.1/src/dana_aux_ELT.F
 f59a6413d37facca03a4802434e632ef *src/lib/MUMPS_5.2.1/src/dana_aux_par.F
 6983afedbe477df8dce1f108667bc779 *src/lib/MUMPS_5.2.1/src/dana_dist_m.F
-d56d62b3d68cc986643369edfd535520 *src/lib/MUMPS_5.2.1/src/dana_driver.F
+290cd7e3abb3e7a0c9e1770cc0f7c9e9 *src/lib/MUMPS_5.2.1/src/dana_driver.F
 c2f869bd834f47ad77a6fd01900fbedd *src/lib/MUMPS_5.2.1/src/dana_lr.F
 91c7701be0c82b65cb9cd55a2cffb01f *src/lib/MUMPS_5.2.1/src/dana_mtrans.F
 474d57fc4c43b636982c7873ee06b478 *src/lib/MUMPS_5.2.1/src/dana_reordertree.F
@@ -193,11 +193,11 @@ a3449032b1012b6598f08087efedb70c *src/lib/MUMPS_5.2.1/src/dmumps_comm_buffer.F
 39daf46417e077e99cb061eafd4c6203 *src/lib/MUMPS_5.2.1/src/dmumps_gpu.h
 9b0394633072309bb275dc5f1a120171 *src/lib/MUMPS_5.2.1/src/dmumps_iXamax.F
 55dab734f4bb5452366a5e5045677d1b *src/lib/MUMPS_5.2.1/src/dmumps_load.F
-f9ac6d041276aa35bad9533a28b7abb8 *src/lib/MUMPS_5.2.1/src/dmumps_lr_data_m.F
+f8fb302bc107103e027f67214f0e4baf *src/lib/MUMPS_5.2.1/src/dmumps_lr_data_m.F
 18900e55efa8efb19826d8690da50412 *src/lib/MUMPS_5.2.1/src/dmumps_ooc.F
 f9f56754c9bc8ea20253d29916cbaafd *src/lib/MUMPS_5.2.1/src/dmumps_ooc_buffer.F
-2bbd8320b6f341d210e189592e052b8b *src/lib/MUMPS_5.2.1/src/dmumps_save_restore.F
-5d68b0697c0b8ed0c5cbb934ef3025b9 *src/lib/MUMPS_5.2.1/src/dmumps_save_restore_files.F
+ea77156796e0319ee50837dafba2f1be *src/lib/MUMPS_5.2.1/src/dmumps_save_restore.F
+af68beba4297796a3c692df18aa3c001 *src/lib/MUMPS_5.2.1/src/dmumps_save_restore_files.F
 a9dce7ad924c1809cfc073dfbe51f77b *src/lib/MUMPS_5.2.1/src/dmumps_sol_es.F
 6243fcb80827a8107f943abc0b0edac5 *src/lib/MUMPS_5.2.1/src/dmumps_struc_def.F
 e1049dbd4f98abc3d41a42d85a8e9794 *src/lib/MUMPS_5.2.1/src/domp_tps_m.F
@@ -209,7 +209,7 @@ e11cf6fb8a260318124a04adfc89b3f7 *src/lib/MUMPS_5.2.1/src/drank_revealing.F
 72431fe548df064e0a8505b8d5a3f4c5 *src/lib/MUMPS_5.2.1/src/dsol_bwd_aux.F
 4c94c1dee08cb3e786be62d1001d6b62 *src/lib/MUMPS_5.2.1/src/dsol_c.F
 143d473f6dde1edc292fe4f711a5f049 *src/lib/MUMPS_5.2.1/src/dsol_distrhs.F
-de1505207c22916562d7c4de5e911f71 *src/lib/MUMPS_5.2.1/src/dsol_driver.F
+f62cd3ac21c3c7be70c0f96ccea8c498 *src/lib/MUMPS_5.2.1/src/dsol_driver.F
 1b0dee2f7411ac827ba4d0c9863e0c10 *src/lib/MUMPS_5.2.1/src/dsol_fwd.F
 e809033d7996793904c2819f631afd12 *src/lib/MUMPS_5.2.1/src/dsol_fwd_aux.F
 09c389db5919511314c16e1a926dbbe2 *src/lib/MUMPS_5.2.1/src/dsol_lr.F
@@ -225,7 +225,7 @@ cdee82b6cba7bbd457061000a5365fc9 *src/lib/MUMPS_5.2.1/src/fac_asm_build_sort_ind
 918b50254123e2e83bfe484836e3343e *src/lib/MUMPS_5.2.1/src/fac_future_niv2_mod.F
 ea049f20056f817adc7236cebdeb924c *src/lib/MUMPS_5.2.1/src/fac_ibct_data_m.F
 34d5392cc935d13ff9222d256ff28154 *src/lib/MUMPS_5.2.1/src/fac_maprow_data_m.F
-e33a9cd6bcac3a7e13a399ea9c6a2e77 *src/lib/MUMPS_5.2.1/src/front_data_mgt_m.F
+940f2ea942e2e62fb9a3a5ab2705ebc9 *src/lib/MUMPS_5.2.1/src/front_data_mgt_m.F
 e1b3912ac893dc6f6fdf1549b2e46a45 *src/lib/MUMPS_5.2.1/src/lr_common.F
 8bd0db3b1bb0e48decf8d57b3b4bcb0d *src/lib/MUMPS_5.2.1/src/mpi_noop.h
 881d421af6b1ab8f5a87025248cab7e0 *src/lib/MUMPS_5.2.1/src/mumps_c.c
@@ -905,7 +905,7 @@ fdfefa817c9f4ed9b8eedcd18281507a *src/lib/scotch_6.0.9/src/libscotch/order_check
 9949af276260fcf23e819acae945e9fb *src/lib/scotch_6.0.9/src/libscotch/parser_ll.h
 74bfa2f7ec929966e87e0cacf7c66ea3 *src/lib/scotch_6.0.9/src/libscotch/parser_ll.l
 fd034b73e52b39517fa56df65e52d9db *src/lib/scotch_6.0.9/src/libscotch/parser_ly.h
-304f90a2b8719aaf0f882bb13e42cfc6 *src/lib/scotch_6.0.9/src/libscotch/parser_yy.c
+eefcaa1a85ea2b69760d8eb9dbd8026c *src/lib/scotch_6.0.9/src/libscotch/parser_yy.c
 3adf2ccd3b864f32c0eeeb83056c5f0e *src/lib/scotch_6.0.9/src/libscotch/parser_yy.h
 5e4e5876edc1d1e8734191eb44f33df2 *src/lib/scotch_6.0.9/src/libscotch/parser_yy.y
 f712ef3f3a7d038f594d06116b1e4203 *src/lib/scotch_6.0.9/src/libscotch/scotch.h
