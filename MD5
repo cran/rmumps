@@ -1,6 +1,6 @@
-a5fbf76373be73d798b180fddae4bfaf *DESCRIPTION
+b1e0c195b3e05392158925220c117447 *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-498c42fa28caab90939052118a0b0dd9 *NEWS
+3d9c7da66869a2926addab352b44395d *NEWS
 425b70021bb3f880666bae6045ccd125 *R/RcppExports.R
 0249ea6e808406e55cc3ace637548614 *R/inc_os.R
 1f3c6991de1bc077250af608ee294b23 *R/methods.R
@@ -456,7 +456,7 @@ e6da1795da6b42252e73e8f07dab0ebe *src/lib/scotch_6.0.9/src/esmumps/symbol.c
 4a336e29452be2ed9aae0fc878d26ff9 *src/lib/scotch_6.0.9/src/esmumps/symbol.h
 ee5167c4f136694f0182e9b0223674eb *src/lib/scotch_6.0.9/src/esmumps/symbol_fax.c
 076614c0ea4738e9f9f4179ae98b4a29 *src/lib/scotch_6.0.9/src/esmumps/symbol_fax.h
-63b364bc33ba984abe43e760d2aed49b *src/lib/scotch_6.0.9/src/esmumps/symbol_fax_graph.c
+d2887eaa98a0c43a98083776e19c83ac *src/lib/scotch_6.0.9/src/esmumps/symbol_fax_graph.c
 ff14c0a2d4c70b74bd6d7206838f6399 *src/lib/scotch_6.0.9/src/libscotch/Makefile
 1adfeb32506fdeeeb2168a9f885ae931 *src/lib/scotch_6.0.9/src/libscotch/Makefile.orig
 cffe70508fb852311c4de01f2cfcde24 *src/lib/scotch_6.0.9/src/libscotch/arch.c
@@ -938,7 +938,7 @@ fb76a97dbc17aa1ea0d44f90c48160fa *src/lib/scotch_6.0.9/src/libscotch/vgraph_sepa
 dc9b453810d52622bdd8b8b591a7b24c *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_es.h
 0ca59019b62524cc1923f383a4a7d97a *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_fm.c
 c8ea693bf090512e79118acd86fec111 *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_fm.h
-a6a7c1970d398537c751fd60500b935f *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gg.c
+7c0042a66c2e205be92181605eecd273 *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gg.c
 f3778ab1d98fa992adc4ed26413a3d3c *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gg.h
 77b9e0e3b4ac271af7d865c765450c8c *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gp.c
 9404c2a403435dec32c4a482e6fbc24a *src/lib/scotch_6.0.9/src/libscotch/vgraph_separate_gp.h
