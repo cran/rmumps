@@ -1,11 +1,11 @@
-25191d5a72088eabd968e63b6f2b8a62 *DESCRIPTION
+352396ca28754bc8af8df5180e20019f *DESCRIPTION
 1aededc3820e098caeaf7ab2f2f4337b *NAMESPACE
-305a6f875fb2d0b9c908313e6669abf7 *NEWS
+f538d207bb4876d782b6f9c53b47adab *NEWS
 425b70021bb3f880666bae6045ccd125 *R/RcppExports.R
 0249ea6e808406e55cc3ace637548614 *R/inc_os.R
 1f3c6991de1bc077250af608ee294b23 *R/methods.R
 68b329da9893e34099c7d8ad5cb9c940 *R/package.R
-314fe6344b808d5186b584dc7dc9b095 *R/zzz.R
+07b5e4ef11efc5e6e0d9b47f1d765888 *R/zzz.R
 8d422e0f2578c6a3cbe300e3a35d3b48 *README.md
 66d2dbc6bef01f7d08c6fb61aacb87b4 *cleanup
 f337331736bc5b14e6fe5f0029d2fde4 *inst/CITATION
@@ -24,7 +24,7 @@ dc28e1a3bf87121519306ce1b311de88 *inst/include/mumps_compat.h
 0b21723719554e90fa9867cca057f440 *inst/include/rcpp_errwarn.h
 e249a54796b0f2b4ab05c2e430ec163f *inst/include/rmumps.h
 5b66657287594b30400866fad7724bfd *inst/include/rmumps_RcppExports.h
-aba92c4b22e1a337ec98fc44244853a5 *man/RMUMPS_PERM.Rd
+cb09cd1d1aee3d721bf2d530079b822c *man/RMUMPS_PERM.Rd
 0bdf79e858b8e2c2ca3f7189c49a0f1a *man/Rmumps.Rd
 197adec410ae352ad06274b0dad1dfac *man/Rmumps__del_ptr.Rd
 2641a37f4978c66f0c0197ba7c9ad89c *man/Rmumps__get_permutation.Rd
@@ -99,7 +99,7 @@ cfbaa8552d558636009f1f5cfd495a07 *src/lib/MUMPS_5.2.1/include/cmumps_struc.h
 a633c0b09265c2d92cde790383ce2e0e *src/lib/MUMPS_5.2.1/include/dmumps_c.h
 177df1972941a02b7e3d521c9c76d981 *src/lib/MUMPS_5.2.1/include/dmumps_root.h
 f6d61d32178106aea8f13f12e0b9549c *src/lib/MUMPS_5.2.1/include/dmumps_struc.h
-12e92c912a3042060b135e4f2824b3c4 *src/lib/MUMPS_5.2.1/include/mumps_c_types.h
+b6939136c893232f5c29aa7ae27af667 *src/lib/MUMPS_5.2.1/include/mumps_c_types.h
 2a2f430c722e5254ad8dcb390adac950 *src/lib/MUMPS_5.2.1/include/mumps_compat.h
 8add10b3f9d56951efb13d0da4fa37e7 *src/lib/MUMPS_5.2.1/include/smumps_c.h
 e273c797d5b98bef05dd02da07f3809f *src/lib/MUMPS_5.2.1/include/smumps_root.h
@@ -195,10 +195,10 @@ a3449032b1012b6598f08087efedb70c *src/lib/MUMPS_5.2.1/src/dmumps_comm_buffer.F
 9b0394633072309bb275dc5f1a120171 *src/lib/MUMPS_5.2.1/src/dmumps_iXamax.F
 55dab734f4bb5452366a5e5045677d1b *src/lib/MUMPS_5.2.1/src/dmumps_load.F
 f8fb302bc107103e027f67214f0e4baf *src/lib/MUMPS_5.2.1/src/dmumps_lr_data_m.F
-18900e55efa8efb19826d8690da50412 *src/lib/MUMPS_5.2.1/src/dmumps_ooc.F
+25ac544a47db767ca235dbaf40aef979 *src/lib/MUMPS_5.2.1/src/dmumps_ooc.F
 f9f56754c9bc8ea20253d29916cbaafd *src/lib/MUMPS_5.2.1/src/dmumps_ooc_buffer.F
 ea77156796e0319ee50837dafba2f1be *src/lib/MUMPS_5.2.1/src/dmumps_save_restore.F
-af68beba4297796a3c692df18aa3c001 *src/lib/MUMPS_5.2.1/src/dmumps_save_restore_files.F
+7f9f6c60bf529973397f392c2293eab7 *src/lib/MUMPS_5.2.1/src/dmumps_save_restore_files.F
 a9dce7ad924c1809cfc073dfbe51f77b *src/lib/MUMPS_5.2.1/src/dmumps_sol_es.F
 6243fcb80827a8107f943abc0b0edac5 *src/lib/MUMPS_5.2.1/src/dmumps_struc_def.F
 e1049dbd4f98abc3d41a42d85a8e9794 *src/lib/MUMPS_5.2.1/src/domp_tps_m.F
@@ -207,7 +207,7 @@ c4a109ab07a5f3d0cfb8d7ce785726b8 *src/lib/MUMPS_5.2.1/src/double_linked_list.F
 e11cf6fb8a260318124a04adfc89b3f7 *src/lib/MUMPS_5.2.1/src/drank_revealing.F
 7392b4ab1c8f88a9df9f8478ce5ed997 *src/lib/MUMPS_5.2.1/src/dsol_aux.F
 6361c1a0138364a98c6164122257821f *src/lib/MUMPS_5.2.1/src/dsol_bwd.F
-72431fe548df064e0a8505b8d5a3f4c5 *src/lib/MUMPS_5.2.1/src/dsol_bwd_aux.F
+dbc32bd4ff2857e1b28bb916325c67f1 *src/lib/MUMPS_5.2.1/src/dsol_bwd_aux.F
 4c94c1dee08cb3e786be62d1001d6b62 *src/lib/MUMPS_5.2.1/src/dsol_c.F
 143d473f6dde1edc292fe4f711a5f049 *src/lib/MUMPS_5.2.1/src/dsol_distrhs.F
 f62cd3ac21c3c7be70c0f96ccea8c498 *src/lib/MUMPS_5.2.1/src/dsol_driver.F
@@ -1073,4 +1073,4 @@ e82db71c528828b67e8c8ed873ee58ba *src/lib/scotch_6.0.9/src/scotch/mtst.c
 9f0f282cc3985ccbdfdeac036505ce1c *src/rmumps_module.cpp
 c586688545903428b2f1b7dc910eb6b0 *src/wrap_r.c
 88e955eb5ef83477f73b545dce2a7fc7 *tests/testthat.R
-66cb9eccd1af80443b1c3c81be9fe231 *tests/testthat/test_rmumps.R
+71125035e46a76e867f16e21998c391b *tests/testthat/test_rmumps.R
