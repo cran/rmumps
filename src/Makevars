@@ -1,21 +1,27 @@
-#DMUMPS=lib/MUMPS_5.1.2
-DMUMPS=lib/MUMPS_5.2.1
+# Copyright 2026 Balasubramanian Narasimhan. GPL (>= 2); see inst/COPYRIGHTS.
+#
+# rmumps build: the vendored MUMPS/PORD/METIS objects (src/vendor, listed in
+# the generated Makevars.vendor) are linked directly into the package
+# library. Regenerate vendor sources with tools/vendor.R, never by hand.
 
-RANLIB?=ranlib
-AR?=ar
+# Makevars.vendor defines explicit rules: keep the shared library the
+# default target.
+all: $(SHLIB)
 
-INC_OS := $(shell "$(R_HOME)/bin/Rscript" ../R/inc_os.R)
-FC_FIXED := $(shell "$(R_HOME)/bin/R" CMD config FC | grep -q -F /ifx && echo "-fixed" || echo "")
-PWD := $(shell "$(R_HOME)/bin/R" --vanilla -q -s -e "cat(getwd())")
+include Makevars.vendor
 
-#PKG_CFLAGS= -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=3 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
-#PKG_CFLAGS= -g -O0
-PKG_CXXFLAGS=-I$(DMUMPS)/include
-PKG_LIBS= -L./lib -ldmumps -lmumps_common -lmpiseq -lpord -lmetis -lesmumps -lscotch -lscotcherr -pthread $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
-#MY_FCFLAGS=-Wall -pedantic -flto -O2 -g
+RMUMPS_OBJS = RcppExports.o get_cnst.o rmumps_api.o rmumps_abi_adapters.o \
+	rmumps_module.o rmumps_testhook.o shim/rmumps_shim.o
 
-$(SHLIB): lib/libdmumps.a
+OBJECTS = $(RMUMPS_OBJS) $(VENDOR_OBJS)
 
-lib/libdmumps.a:
-	$(MAKE) -C lib \
-	  CC="$(CC)" FC="$(FC)" PKG_CFLAGS="$(CFLAGS) $(CPICFLAGS) $(PKG_CFLAGS) -I$(R_INCLUDE_DIR) -I$(PWD)/../inst/include"  PKG_FCFLAGS="$(FCFLAGS) $(FPICFLAGS) $(PKG_FCFLAGS)" AR="$(AR)" RANLIB="$(RANLIB)" INC_OS="$(INC_OS)" FC_FIXED="$(FC_FIXED)"
+VENDOR_INC = -Ivendor/mumps/include -Ivendor/mumps/libseq \
+	-Ivendor/mumps/PORD/include -Ivendor/metis/include -Ivendor/metis/GKlib
+VENDOR_DEFS = -DAdd_ -Dmetis -Dpord -DNO_SAVE_RESTORE -DWITHOUT_PTHREAD \
+	-DUSE_GKREGEX
+
+PKG_CPPFLAGS = -I../inst/include -Ishim $(VENDOR_INC) $(VENDOR_DEFS)
+PKG_CFLAGS = $(C_VISIBILITY)
+PKG_FFLAGS = $(F_VISIBILITY) -Ivendor/mumps/include -Ivendor/mumps/libseq \
+	-Dmetis -Dpord -DNO_SAVE_RESTORE
+PKG_LIBS = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
